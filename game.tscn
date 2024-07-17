@@ -5,20 +5,20 @@
 [sub_resource type="QuadMesh" id="QuadMesh_pb8fj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qu2hh"]
-size = Vector2(500, 150)
+size = Vector2(1149, 42)
 
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_gu0lw")]
-position = Vector2(613, 371)
+position = Vector2(561, 605)
 
 [node name="Platform" type="StaticBody2D" parent="."]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Platform"]
-position = Vector2(608, 525)
-scale = Vector2(500, 150)
+position = Vector2(576, 625.5)
+scale = Vector2(1150, 43)
 mesh = SubResource("QuadMesh_pb8fj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
-position = Vector2(608, 524)
+position = Vector2(576.5, 625)
 shape = SubResource("RectangleShape2D_qu2hh")
