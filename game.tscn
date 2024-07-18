@@ -10,7 +10,16 @@ size = Vector2(1149, 42)
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_gu0lw")]
+<<<<<<< Updated upstream
 position = Vector2(561, 605)
+=======
+position = Vector2(561, 588)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(9, -69)
+zoom = Vector2(2.5, 2.5)
+position_smoothing_speed = 6.0
+>>>>>>> Stashed changes
 
 [node name="Platform" type="StaticBody2D" parent="."]
 
