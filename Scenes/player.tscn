@@ -565,7 +565,6 @@ shape = SubResource("CircleShape2D_a4dxg")
 zoom = Vector2(2.5, 2.5)
 
 [node name="Inventory_UI" parent="." instance=ExtResource("4_idabu")]
-z_index = 3
 offset_left = -43.0
 offset_top = -94.0
 offset_right = 43.0
