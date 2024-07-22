@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ctssfn3anvs8m"]
 
-[ext_resource type="Script" path="res://Scripts/apple_tree.gd" id="1_8bncp"]
+[ext_resource type="Script" path="res://Scripts/Interactables/apple_tree.gd" id="1_ar4g0"]
 [ext_resource type="Texture2D" uid="uid://b2iv42vvt3rf0" path="res://Art/environment/survivalgame-appletree.png" id="2_8lf4v"]
 [ext_resource type="Resource" uid="uid://cgvkjk135otr7" path="res://Inventory/items/apple.tres" id="2_unf1e"]
 
@@ -39,7 +39,7 @@ radius = 7.0
 
 [node name="apple_tree" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_8bncp")
+script = ExtResource("1_ar4g0")
 item = ExtResource("2_unf1e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
