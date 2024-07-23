@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://vs6dng2sm34i"]
+[gd_scene load_steps=4 format=3 uid="uid://vs6dng2sm34i"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_aclx5"]
+[ext_resource type="Texture2D" uid="uid://b70n60or5w1c0" path="res://Art/Thor.png" id="2_cdmou"]
 [ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/fade_transition.tscn" id="2_ioio7"]
 
 [node name="main_menu" type="Node2D"]
 script = ExtResource("1_aclx5")
+
+[node name="Thor" type="Sprite2D" parent="."]
+position = Vector2(299, 310)
+texture = ExtResource("2_cdmou")
 
 [node name="button_manager" type="Control" parent="."]
 layout_mode = 3

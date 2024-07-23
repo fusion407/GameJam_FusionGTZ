@@ -25,6 +25,6 @@ func _on_quit_pressed():
 
 func _on_fade_timer_timeout():
 	if button_type == "start":
-		get_tree().change_scene_to_file("res://Scenes/Game.tscn")
+		get_tree().change_scene_to_file("res://Scenes/house.tscn")
 	elif button_type == "options":
-		get_tree().change_scene_to_file("res://Scenes/Game.tscn")  # change the scene to options when the options scene is created
+		get_tree().change_scene_to_file("res://Scenes/house.tscn")  # change the scene to options when the options scene is created

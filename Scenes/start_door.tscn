@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://l5gdu70e2x4s"]
+[gd_scene load_steps=6 format=3 uid="uid://l5gdu70e2x4s"]
 
 [ext_resource type="Texture2D" uid="uid://bqnjog31eqkxb" path="res://icon.svg" id="1_e4nh5"]
 [ext_resource type="Script" path="res://Scenes/start_door.gd" id="1_s08pp"]
+[ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/fade_transition.tscn" id="3_8usa1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w84p0"]
 size = Vector2(99.9998, 26.7857)
@@ -30,5 +31,10 @@ scale = Vector2(1, 1.5)
 position = Vector2(-1.58945e-06, 0)
 shape = SubResource("RectangleShape2D_ny1km")
 
+[node name="Fade_transition" parent="." instance=ExtResource("3_8usa1")]
+
+[node name="fade_timer" type="Timer" parent="Fade_transition"]
+
 [connection signal="body_entered" from="start_game_area" to="." method="_on_start_game_area_body_entered"]
 [connection signal="body_exited" from="start_game_area" to="." method="_on_start_game_area_body_exited"]
+[connection signal="timeout" from="Fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]

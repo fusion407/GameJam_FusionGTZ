@@ -16,7 +16,10 @@ func _input(event):
 		return
 	if event.is_action_pressed("chat"):
 		print("game start?")
-		get_tree().change_scene_to_file("res://Scenes/Game.tscn")
+		$Fade_transition.show()
+		$Fade_transition/fade_timer.start()
+		$Fade_transition/AnimationPlayer.play("fade_in")
+		
 
 func _on_start_game_area_body_entered(body):
 	if body.has_method("player"):
@@ -28,3 +31,8 @@ func _on_start_game_area_body_exited(body):
 	if body.has_method("player"):
 		playerOnDoor = false
 		print("or not.....")
+
+
+
+func _on_fade_timer_timeout():
+	get_tree().change_scene_to_file("res://Scenes/Game.tscn")

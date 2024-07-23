@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://h63hienpe3xb" path="res://Scenes/npc.tscn" id="8_s8afd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4fwde"]
+resource_name = "true"
 texture = ExtResource("2_dumbc")
 texture_region_size = Vector2i(40, 40)
 0:0/0 = 0
