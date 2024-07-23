@@ -246,7 +246,7 @@ animations = [{
 "speed": 4.0
 }, {
 "frames": [{
-"duration": 3.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_7j47b")
 }],
 "loop": false,

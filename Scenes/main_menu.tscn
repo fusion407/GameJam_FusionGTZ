@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://vs6dng2sm34i"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_aclx5"]
+[ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/fade_transition.tscn" id="2_ioio7"]
+
+[node name="main_menu" type="Node2D"]
+script = ExtResource("1_aclx5")
+
+[node name="button_manager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="button_manager"]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 258.0
+offset_right = 577.0
+offset_bottom = 289.0
+text = "Start"
+
+[node name="Options" type="Button" parent="button_manager"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 296.0
+offset_right = 590.0
+offset_bottom = 327.0
+text = "Options
+"
+
+[node name="Quit" type="Button" parent="button_manager"]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 333.0
+offset_right = 575.0
+offset_bottom = 364.0
+text = "Quit
+"
+
+[node name="Fade_transition" parent="." instance=ExtResource("2_ioio7")]
+visible = false
+
+[node name="fade_timer" type="Timer" parent="Fade_transition"]
+
+[connection signal="pressed" from="button_manager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="button_manager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="button_manager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="Fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
