@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://jai5un104npm"]
+[gd_scene load_steps=14 format=3 uid="uid://jai5un104npm"]
 
 [ext_resource type="PackedScene" uid="uid://mk8mgi4k3y8e" path="res://Scenes/player.tscn" id="1_04wao"]
+[ext_resource type="Script" path="res://Scripts/Game.gd" id="1_jjewb"]
 [ext_resource type="Texture2D" uid="uid://cvpi02o6fp5e4" path="res://Art/environment/survivalgame-terrian-defult.png" id="2_dumbc"]
 [ext_resource type="Texture2D" uid="uid://ucsjdn5y0oql" path="res://Art/environment/survivalgame-terrian-cliffs.png" id="3_404p5"]
 [ext_resource type="Texture2D" uid="uid://bee8ln8lp0cln" path="res://Art/environment/survivalgame-trees.png" id="4_wg4a2"]
@@ -573,6 +574,7 @@ sources/2 = SubResource("TileSetAtlasSource_5qhec")
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_jjewb")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
