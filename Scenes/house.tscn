@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dk32b0y5hefod"]
+[gd_scene load_steps=7 format=3 uid="uid://dk32b0y5hefod"]
 
 [ext_resource type="Texture2D" uid="uid://cvpi02o6fp5e4" path="res://Art/environment/survivalgame-terrian-defult.png" id="1_3i80e"]
 [ext_resource type="PackedScene" uid="uid://mk8mgi4k3y8e" path="res://Scenes/player.tscn" id="2_1erbp"]
 [ext_resource type="PackedScene" uid="uid://l5gdu70e2x4s" path="res://Scenes/start_door.tscn" id="3_u620a"]
+[ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/fade_transition.tscn" id="4_t5njv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cm1ia"]
 texture = ExtResource("1_3i80e")
@@ -105,3 +106,7 @@ layer_0/tile_data = PackedInt32Array(65535, 524288, 1, 0, 524288, 1, -65536, 524
 [node name="start_door" parent="." instance=ExtResource("3_u620a")]
 position = Vector2(0, -117)
 scale = Vector2(0.602401, 0.551109)
+
+[node name="Fade_transition" parent="." instance=ExtResource("4_t5njv")]
+
+[node name="fade_timer" type="Timer" parent="Fade_transition"]

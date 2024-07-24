@@ -43,6 +43,23 @@ offset_bottom = 364.0
 text = "Quit
 "
 
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 151.0
+offset_right = 772.0
+offset_bottom = 221.0
+theme_override_font_sizes/normal_font_size = 48
+text = "The Wizard of Nah"
+
 [node name="Fade_transition" parent="." instance=ExtResource("2_ioio7")]
 visible = false
 

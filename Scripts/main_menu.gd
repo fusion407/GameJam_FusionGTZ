@@ -15,7 +15,7 @@ func _on_options_pressed():
 	
 	button_type = "options"
 	$Fade_transition.show()
-	$Fade_transition/Fade_timer.start()
+	$Fade_transition/fade_timer.start()
 	$Fade_transition/AnimationPlayer.play("fade_in")
 
 
