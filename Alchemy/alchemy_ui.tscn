@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://br0rqlfh5ypc6"]
+
+[ext_resource type="Texture2D" uid="uid://dctvqqkifce1s" path="res://Art/inventory_art/inventory-background.png" id="1_xhgo0"]
+[ext_resource type="Script" path="res://Alchemy/alchemy_ui.gd" id="1_yy0dm"]
+[ext_resource type="PackedScene" uid="uid://d057yjg0y6shv" path="res://Alchemy/alchemy_craftables_ui.tscn" id="3_aecfg"]
+[ext_resource type="PackedScene" uid="uid://ch8wogkys6fhu" path="res://Alchemy/alchemy_selected_potion_ui.tscn" id="4_7sceg"]
+
+[node name="alchemy_ui" type="Control"]
+custom_minimum_size = Vector2(84, 64)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 121.0
+offset_bottom = 84.0
+scale = Vector2(0.82212, 0.730773)
+script = ExtResource("1_yy0dm")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+modulate = Color(0.231373, 0.360784, 0.905882, 1)
+layout_mode = 0
+offset_right = 121.0
+offset_bottom = 84.0
+texture = ExtResource("1_xhgo0")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 37.5
+offset_top = 1.5625
+offset_right = 140.5
+offset_bottom = 28.5625
+scale = Vector2(0.5, 0.5)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Craft Potions"
+
+[node name="alchemy_craftables_ui" parent="." instance=ExtResource("3_aecfg")]
+offset_left = 4.16667
+offset_top = 14.0625
+offset_right = 54.1667
+offset_bottom = 64.0625
+
+[node name="alchemy_selected_potion_ui" parent="." instance=ExtResource("4_7sceg")]
+offset_left = 65.2778
+offset_top = 14.0625
+offset_right = 124.278
+offset_bottom = 81.0625

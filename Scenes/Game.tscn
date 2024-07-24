@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://jai5un104npm"]
+[gd_scene load_steps=15 format=3 uid="uid://jai5un104npm"]
 
 [ext_resource type="PackedScene" uid="uid://mk8mgi4k3y8e" path="res://Scenes/player.tscn" id="1_04wao"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_jjewb"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cju20pcdc3i87" path="res://Scenes/stick_collectable.tscn" id="6_wjx4s"]
 [ext_resource type="PackedScene" uid="uid://dovwaqnf20rb5" path="res://Scenes/slime.tscn" id="7_jy72y"]
 [ext_resource type="PackedScene" uid="uid://h63hienpe3xb" path="res://Scenes/npc.tscn" id="8_s8afd"]
+[ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/fade_transition.tscn" id="10_wnsbl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4fwde"]
 resource_name = "true"
@@ -625,3 +626,14 @@ position = Vector2(-50, 112)
 
 [node name="npc" parent="." instance=ExtResource("8_s8afd")]
 position = Vector2(111, -55)
+
+[node name="Fade_transition" parent="." instance=ExtResource("10_wnsbl")]
+
+[node name="fade_timer" type="Timer" parent="Fade_transition"]
+
+[node name="game_timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="game_timer" to="." method="_on_game_timer_timeout"]

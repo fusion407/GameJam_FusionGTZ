@@ -6,12 +6,8 @@ func _ready():
 	$Fade_transition.show()
 	$Fade_transition/fade_timer.start()
 	$Fade_transition/AnimationPlayer.play("fade_out")
-	
-	$Player.game_has_started = true
-	
-	
 
 
-func _on_game_timer_timeout():
-	print("timer run out. yay")
-	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass

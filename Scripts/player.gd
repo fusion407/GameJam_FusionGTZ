@@ -9,8 +9,8 @@ var player_state
 
 # once the game has ended, make sure game_has_started, and wand_equipped is set to false
 # by default, game_has_started will eventually be set to false so player has to initiate game start function to use wand
-var game_has_started = true
-var wand_equipped = true
+var game_has_started = false
+var wand_equipped = false
 var wand_cooldown = true
 var projectile = preload("res://Scenes/projectile.tscn")
 
@@ -53,7 +53,7 @@ func _physics_process(delta):
 		# plays attack animation when left mouse click is used not working very well, attack animation can be low priority
 		# play_attack_anim(mouse_loc_from_player)
 		
-		await get_tree().create_timer(0.4).timeout
+		await get_tree().create_timer(0.1).timeout
 		wand_cooldown = true
 	
 	play_anim(direction)
