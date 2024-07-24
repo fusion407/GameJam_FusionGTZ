@@ -1,10 +1,8 @@
 [gd_resource type="Resource" script_class="Pot" load_steps=14 format=3 uid="uid://4akfi1v1njmj"]
 
 [ext_resource type="Script" path="res://Alchemy/potion.gd" id="1_gr0nt"]
+[ext_resource type="Resource" uid="uid://xunxdquqntoa" path="res://Alchemy/Potions/Slot/potion_of_healing_slot.tres" id="2_4n0x7"]
 [ext_resource type="Script" path="res://Alchemy/potion_slot.gd" id="2_ofb6r"]
-
-[sub_resource type="Resource" id="Resource_me4hy"]
-script = ExtResource("2_ofb6r")
 
 [sub_resource type="Resource" id="Resource_74wcm"]
 script = ExtResource("2_ofb6r")
@@ -38,4 +36,4 @@ script = ExtResource("2_ofb6r")
 
 [resource]
 script = ExtResource("1_gr0nt")
-slots = Array[ExtResource("2_ofb6r")]([SubResource("Resource_me4hy"), SubResource("Resource_74wcm"), SubResource("Resource_af5jk"), SubResource("Resource_bnyba"), SubResource("Resource_avb53"), SubResource("Resource_u8lnh"), SubResource("Resource_08nyo"), SubResource("Resource_0hugf"), SubResource("Resource_wxtpy"), SubResource("Resource_10mo0"), SubResource("Resource_lqx53")])
+slots = Array[ExtResource("2_ofb6r")]([ExtResource("2_4n0x7"), SubResource("Resource_74wcm"), SubResource("Resource_af5jk"), SubResource("Resource_bnyba"), SubResource("Resource_avb53"), SubResource("Resource_u8lnh"), SubResource("Resource_08nyo"), SubResource("Resource_0hugf"), SubResource("Resource_wxtpy"), SubResource("Resource_10mo0"), SubResource("Resource_lqx53")])
