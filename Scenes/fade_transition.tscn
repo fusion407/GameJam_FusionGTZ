@@ -37,8 +37,11 @@ _data = {
 }
 
 [node name="fade_transition" type="ColorRect"]
-offset_right = 1154.0
-offset_bottom = 649.0
+offset_left = -13043.0
+offset_top = 6048.0
+offset_right = -11889.0
+offset_bottom = 6697.0
+scale = Vector2(29.0044, -22.1151)
 color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

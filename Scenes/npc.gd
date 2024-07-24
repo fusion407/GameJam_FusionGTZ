@@ -44,13 +44,13 @@ func _process(delta):
 				dir = choose([Vector2.RIGHT, Vector2.UP, Vector2.LEFT, Vector2.DOWN])
 			MOVE:
 				move(delta)
-				
-	if Input.is_action_just_pressed("chat"):
-		print("chatting with npc")
-		$Dialogue.start()
-		is_roaming = false
-		is_chatting = true
-		$AnimatedSprite2D.play("idle")
+	if 	player_in_chat_zone:		
+		if Input.is_action_just_pressed("chat"):
+			print("chatting with npc")
+			$Dialogue.start()
+			is_roaming = false
+			is_chatting = true
+			$AnimatedSprite2D.play("idle")
 	
 func choose(array):
 	array.shuffle()
@@ -66,11 +66,13 @@ func _on_chat_detection_area_body_entered(body):
 	if body.has_method("player"):
 		player = body
 		player_in_chat_zone = true
+		$NinePatchRect/click_f_label.visible = true
 
 
 func _on_chat_detection_area_body_exited(body):
 	if body.has_method("player"):
 		player_in_chat_zone = false
+		$NinePatchRect/click_f_label.visible = false
 
 
 func _on_timer_timeout():
