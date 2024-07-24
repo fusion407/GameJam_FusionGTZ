@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq8r128g82ij2"]
+
+[ext_resource type="Script" path="res://Alchemy/alchemy_craftables_slot_ui.gd" id="1_t4fi0"]
+[ext_resource type="Texture2D" uid="uid://dqy43lsd3u5ac" path="res://Art/inventory_art/inventory-slot.png" id="2_whx5b"]
+
+[node name="alchemy_craftables_slot_ui" type="Panel"]
+custom_minimum_size = Vector2(12, 12)
+offset_right = 12.0
+offset_bottom = 12.0
+script = ExtResource("1_t4fi0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6, 6)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_whx5b")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 12.0
+offset_bottom = 12.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="item_display" type="Sprite2D" parent="CenterContainer/Panel"]

@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://d057yjg0y6shv"]
+
+[ext_resource type="Script" path="res://Alchemy/alchemy_craftables_ui.gd" id="1_a66ms"]
+[ext_resource type="Texture2D" uid="uid://dctvqqkifce1s" path="res://Art/inventory_art/inventory-background.png" id="2_85gop"]
+[ext_resource type="PackedScene" uid="uid://dq8r128g82ij2" path="res://Alchemy/Scenes/alchemy_craftables_slot_ui.tscn" id="3_7tqtd"]
+
+[node name="alchemy_craftables_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 59.0
+offset_bottom = 67.0
+script = ExtResource("1_a66ms")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 59.0
+offset_bottom = 67.0
+texture = ExtResource("2_85gop")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_top = -29.5
+offset_right = 22.5
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="alchemy_craftables_slot_ui_1" parent="NinePatchRect/GridContainer" instance=ExtResource("3_7tqtd")]
+layout_mode = 2
+
+[node name="alchemy_craftables_slot_ui_2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_7tqtd")]
+layout_mode = 2
+
+[node name="alchemy_craftables_slot_ui_3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_7tqtd")]
+layout_mode = 2
+
+[node name="alchemy_craftables_slot_ui_4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_7tqtd")]
+layout_mode = 2
+
+[node name="alchemy_craftables_slot_ui_5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_7tqtd")]
+layout_mode = 2
+
+[node name="alchemy_craftables_slot_ui_6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_7tqtd")]
+layout_mode = 2
+
+[node name="alchemy_craftables_slot_ui_7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_7tqtd")]
+layout_mode = 2
+
+[node name="alchemy_craftables_slot_ui_8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_7tqtd")]
+layout_mode = 2
+
+[node name="alchemy_craftables_slot_ui_9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_7tqtd")]
+layout_mode = 2
+
+[node name="alchemy_craftables_slot_ui_10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_7tqtd")]
+layout_mode = 2
+
+[node name="alchemy_craftables_slot_ui_11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_7tqtd")]
+layout_mode = 2
+
+[node name="alchemy_craftables_slot_ui_12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_7tqtd")]
+layout_mode = 2

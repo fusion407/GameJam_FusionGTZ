@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dctvqqkifce1s" path="res://Art/inventory_art/inventory-background.png" id="1_xhgo0"]
 [ext_resource type="Script" path="res://Alchemy/alchemy_ui.gd" id="1_yy0dm"]
-[ext_resource type="PackedScene" uid="uid://d057yjg0y6shv" path="res://Alchemy/alchemy_craftables_ui.tscn" id="3_aecfg"]
-[ext_resource type="PackedScene" uid="uid://ch8wogkys6fhu" path="res://Alchemy/alchemy_selected_potion_ui.tscn" id="4_7sceg"]
+[ext_resource type="PackedScene" uid="uid://d057yjg0y6shv" path="res://Alchemy/Scenes/alchemy_craftables_ui.tscn" id="3_aecfg"]
+[ext_resource type="PackedScene" uid="uid://ch8wogkys6fhu" path="res://Alchemy/Scenes/alchemy_selected_potion_ui.tscn" id="4_7sceg"]
 
 [node name="alchemy_ui" type="Control"]
 custom_minimum_size = Vector2(84, 64)
@@ -35,14 +35,14 @@ scale = Vector2(0.5, 0.5)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Craft Potions"
 
-[node name="alchemy_craftables_ui" parent="." instance=ExtResource("3_aecfg")]
-offset_left = 4.16667
-offset_top = 14.0625
-offset_right = 54.1667
-offset_bottom = 64.0625
-
 [node name="alchemy_selected_potion_ui" parent="." instance=ExtResource("4_7sceg")]
 offset_left = 65.2778
 offset_top = 14.0625
 offset_right = 124.278
 offset_bottom = 81.0625
+
+[node name="alchemy_craftables_ui" parent="." instance=ExtResource("3_aecfg")]
+offset_left = 3.6491
+offset_top = 13.6841
+offset_right = 62.6491
+offset_bottom = 80.6841

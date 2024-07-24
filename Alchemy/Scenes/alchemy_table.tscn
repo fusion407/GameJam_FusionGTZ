@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b70n60or5w1c0" path="res://Art/Thor.png" id="1_itkos"]
 [ext_resource type="Script" path="res://Alchemy/alchemy_table.gd" id="1_sfmwd"]
-[ext_resource type="PackedScene" uid="uid://br0rqlfh5ypc6" path="res://Alchemy/alchemy_ui.tscn" id="3_ej7tb"]
+[ext_resource type="PackedScene" uid="uid://br0rqlfh5ypc6" path="res://Alchemy/Scenes/alchemy_ui.tscn" id="3_ej7tb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34138"]
 size = Vector2(12, 14)
