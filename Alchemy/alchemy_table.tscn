@@ -20,10 +20,10 @@ scale = Vector2(0.0212651, 0.0212651)
 texture = ExtResource("1_itkos")
 
 [node name="alchemy_ui" parent="." instance=ExtResource("3_ej7tb")]
-offset_left = -77.7426
-offset_top = -25.4012
-offset_right = 6.25736
-offset_bottom = 38.5988
+offset_left = -106.896
+offset_top = -36.0342
+offset_right = 14.1039
+offset_bottom = 47.9658
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
