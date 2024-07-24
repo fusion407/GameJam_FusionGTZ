@@ -357,6 +357,6 @@ offset_right = 301.0
 offset_bottom = 177.0
 scale = Vector2(0.5, 0.5)
 text = "[TAB] - Inventory
-[E] - Search trees
+[E] - Search
 [F] - Interact
 [Q] - Drink potion"

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://mk8mgi4k3y8e" path="res://Scenes/player.tscn" id="2_1erbp"]
 [ext_resource type="PackedScene" uid="uid://l5gdu70e2x4s" path="res://Scenes/start_door.tscn" id="3_u620a"]
 [ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/fade_transition.tscn" id="4_t5njv"]
-[ext_resource type="PackedScene" uid="uid://bwdogjp6qja5d" path="res://Scenes/alchemy_table.tscn" id="5_emssn"]
+[ext_resource type="PackedScene" uid="uid://bwdogjp6qja5d" path="res://Alchemy/alchemy_table.tscn" id="5_emssn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cm1ia"]
 texture = ExtResource("1_3i80e")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://l5gdu70e2x4s"]
 
-[ext_resource type="Texture2D" uid="uid://bqnjog31eqkxb" path="res://icon.svg" id="1_e4nh5"]
 [ext_resource type="Script" path="res://Scenes/start_door.gd" id="1_s08pp"]
+[ext_resource type="Texture2D" uid="uid://b70n60or5w1c0" path="res://Art/Thor.png" id="2_kvaop"]
 [ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/fade_transition.tscn" id="3_8usa1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w84p0"]
@@ -15,8 +15,9 @@ scale = Vector2(0.600001, 0.560001)
 script = ExtResource("1_s08pp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.68, 0.0885704)
-texture = ExtResource("1_e4nh5")
+position = Vector2(0, 9.82141)
+scale = Vector2(0.149683, 0.0309336)
+texture = ExtResource("2_kvaop")
 
 [node name="start_game_area" type="Area2D" parent="."]
 
