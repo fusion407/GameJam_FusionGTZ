@@ -2,5 +2,5 @@ extends Resource
 
 class_name PotSlot
 
-@export var pot: PotItem
+@export var pot: InvItem
 

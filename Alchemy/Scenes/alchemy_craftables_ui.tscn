@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d057yjg0y6shv"]
 
-[ext_resource type="Script" path="res://Alchemy/alchemy_craftables_ui.gd" id="1_a66ms"]
+[ext_resource type="Script" path="res://Alchemy/Scripts/alchemy_craftables_ui.gd" id="1_0akyp"]
 [ext_resource type="Texture2D" uid="uid://dctvqqkifce1s" path="res://Art/inventory_art/inventory-background.png" id="2_85gop"]
 [ext_resource type="PackedScene" uid="uid://dq8r128g82ij2" path="res://Alchemy/Scenes/alchemy_craftables_slot_ui.tscn" id="3_7tqtd"]
 
@@ -9,7 +9,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 59.0
 offset_bottom = 67.0
-script = ExtResource("1_a66ms")
+script = ExtResource("1_0akyp")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
