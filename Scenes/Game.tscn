@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=3 uid="uid://jai5un104npm"]
 
-[ext_resource type="PackedScene" uid="uid://mk8mgi4k3y8e" path="res://Scenes/player.tscn" id="1_04wao"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_jjewb"]
 [ext_resource type="Texture2D" uid="uid://cvpi02o6fp5e4" path="res://Art/environment/survivalgame-terrian-defult.png" id="2_dumbc"]
 [ext_resource type="Texture2D" uid="uid://ucsjdn5y0oql" path="res://Art/environment/survivalgame-terrian-cliffs.png" id="3_404p5"]
 [ext_resource type="Texture2D" uid="uid://bee8ln8lp0cln" path="res://Art/environment/survivalgame-trees.png" id="4_wg4a2"]
 [ext_resource type="PackedScene" uid="uid://ctssfn3anvs8m" path="res://Scenes/apple_tree.tscn" id="5_r13tf"]
 [ext_resource type="PackedScene" uid="uid://cju20pcdc3i87" path="res://Scenes/stick_collectable.tscn" id="6_wjx4s"]
+[ext_resource type="PackedScene" uid="uid://bfxx8spmpvkfe" path="res://Game-Jam/Art/Player-Character/player. Merlintscn.tscn" id="7_4ghcp"]
 [ext_resource type="PackedScene" uid="uid://dovwaqnf20rb5" path="res://Scenes/slime.tscn" id="7_jy72y"]
 [ext_resource type="PackedScene" uid="uid://h63hienpe3xb" path="res://Scenes/npc.tscn" id="8_s8afd"]
 [ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/fade_transition.tscn" id="10_wnsbl"]
@@ -610,8 +610,7 @@ position = Vector2(157, -25)
 [node name="stick_collectable4" parent="." instance=ExtResource("6_wjx4s")]
 position = Vector2(-170, 85)
 
-[node name="Player" parent="." instance=ExtResource("1_04wao")]
-position = Vector2(218, 1)
+[node name="Player" parent="." instance=ExtResource("7_4ghcp")]
 
 [node name="collisions" type="StaticBody2D" parent="."]
 
@@ -628,6 +627,10 @@ position = Vector2(-50, 112)
 position = Vector2(111, -55)
 
 [node name="Fade_transition" parent="." instance=ExtResource("10_wnsbl")]
+offset_left = -12753.0
+offset_top = 6330.0
+offset_right = -11599.0
+offset_bottom = 6979.0
 
 [node name="fade_timer" type="Timer" parent="Fade_transition"]
 
