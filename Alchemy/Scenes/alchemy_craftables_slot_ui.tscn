@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://dq8r128g82ij2"]
 
-[ext_resource type="Script" path="res://Alchemy/alchemy_craftables_slot_ui.gd" id="1_t4fi0"]
+[ext_resource type="Script" path="res://Alchemy/Scripts/alchemy_craftables_slot_ui.gd" id="1_7ix2h"]
 [ext_resource type="Texture2D" uid="uid://dqy43lsd3u5ac" path="res://Art/inventory_art/inventory-slot.png" id="2_whx5b"]
 
 [node name="alchemy_craftables_slot_ui" type="Panel"]
 custom_minimum_size = Vector2(12, 12)
 offset_right = 12.0
 offset_bottom = 12.0
-script = ExtResource("1_t4fi0")
+script = ExtResource("1_7ix2h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(6, 6)

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PotSlot" load_steps=3 format=3 uid="uid://xunxdquqntoa"]
+
+[ext_resource type="Resource" uid="uid://bytigu3lp3n2y" path="res://Alchemy/Potions/potion_of_healing.tres" id="1_fs22k"]
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_slot.gd" id="2_du0ko"]
+
+[resource]
+script = ExtResource("2_du0ko")
+pot = ExtResource("1_fs22k")

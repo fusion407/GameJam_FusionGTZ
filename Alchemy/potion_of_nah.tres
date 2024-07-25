@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="PotItem" load_steps=3 format=3 uid="uid://bhs833qs5sdpm"]
-
-[ext_resource type="Script" path="res://Alchemy/potion_item.gd" id="1_nc6bv"]
-[ext_resource type="Texture2D" uid="uid://b70n60or5w1c0" path="res://Art/Thor.png" id="2_uuhsd"]
-
-[resource]
-script = ExtResource("1_nc6bv")
-name = "Potion of Nah"
-texture = ExtResource("2_uuhsd")
