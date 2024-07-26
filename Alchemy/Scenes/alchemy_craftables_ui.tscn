@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d057yjg0y6shv"]
+[gd_scene load_steps=5 format=3 uid="uid://d057yjg0y6shv"]
 
 [ext_resource type="Script" path="res://Alchemy/Scripts/alchemy_craftables_ui.gd" id="1_0akyp"]
 [ext_resource type="Texture2D" uid="uid://dctvqqkifce1s" path="res://Art/inventory_art/inventory-background.png" id="2_85gop"]
 [ext_resource type="PackedScene" uid="uid://dq8r128g82ij2" path="res://Alchemy/Scenes/alchemy_craftables_slot_ui.tscn" id="3_7tqtd"]
+[ext_resource type="PackedScene" uid="uid://ch8wogkys6fhu" path="res://Alchemy/Scenes/alchemy_selected_potion_ui.tscn" id="4_ujjlf"]
 
 [node name="alchemy_craftables_ui" type="Control"]
 layout_mode = 3
@@ -72,5 +73,9 @@ layout_mode = 2
 
 [node name="alchemy_craftables_slot_ui_12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_7tqtd")]
 layout_mode = 2
+
+[node name="alchemy_selected_potion_ui" parent="." instance=ExtResource("4_ujjlf")]
+offset_left = 62.0
+offset_right = 114.0
 
 [connection signal="potion_selected" from="NinePatchRect/GridContainer/alchemy_craftables_slot_ui_1" to="." method="_on_alchemy_craftables_slot_ui_1_potion_selected"]
