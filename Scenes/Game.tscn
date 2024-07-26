@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://jai5un104npm"]
+[gd_scene load_steps=18 format=3 uid="uid://jai5un104npm"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_jjewb"]
 [ext_resource type="Texture2D" uid="uid://cvpi02o6fp5e4" path="res://Art/environment/survivalgame-terrian-defult.png" id="2_dumbc"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/fade_transition.tscn" id="10_wnsbl"]
 [ext_resource type="PackedScene" uid="uid://dlaulvfxk1dir" path="res://Scenes/lighter_collectable.tscn" id="11_b0y2j"]
 [ext_resource type="PackedScene" uid="uid://dltlnagj1fcr" path="res://Scenes/bone_collectable.tscn" id="12_yfv5d"]
+[ext_resource type="PackedScene" uid="uid://b1351188ahop4" path="res://Scenes/stone_collectable.tscn" id="13_ytc5x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4fwde"]
 resource_name = "true"
@@ -671,5 +672,8 @@ position = Vector2(246, 78)
 
 [node name="bone_collectable" parent="." instance=ExtResource("12_yfv5d")]
 position = Vector2(129, 94)
+
+[node name="stone_collectable" parent="." instance=ExtResource("13_ytc5x")]
+position = Vector2(15, 28)
 
 [connection signal="timeout" from="game_timer" to="." method="_on_game_timer_timeout"]
