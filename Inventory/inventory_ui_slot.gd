@@ -14,3 +14,4 @@ func update(slot: InvSlot):
 		if slot.amount > 1:
 			amount_text.visible = true
 		amount_text.text = str(slot.amount)
+

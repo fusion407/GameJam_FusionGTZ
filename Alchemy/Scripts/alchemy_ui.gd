@@ -1,6 +1,5 @@
 extends Control
 
-@onready var pot: Pot = preload("res://Alchemy/Potions/Craftable Slots/craftable_potions.tres")
 
 var is_open = false
 # Called when the node enters the scene tree for the first time.

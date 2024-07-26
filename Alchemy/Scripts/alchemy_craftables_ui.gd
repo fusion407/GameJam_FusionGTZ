@@ -3,6 +3,7 @@ extends Control
 @onready var pot: Pot = preload("res://Alchemy/Potions/Craftable Slots/craftable_potions.tres")
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pot.update.connect(update_slots)

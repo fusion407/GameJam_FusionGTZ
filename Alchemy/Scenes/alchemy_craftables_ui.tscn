@@ -9,6 +9,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 59.0
 offset_bottom = 67.0
+mouse_filter = 2
 script = ExtResource("1_0akyp")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
@@ -71,3 +72,5 @@ layout_mode = 2
 
 [node name="alchemy_craftables_slot_ui_12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_7tqtd")]
 layout_mode = 2
+
+[connection signal="potion_selected" from="NinePatchRect/GridContainer/alchemy_craftables_slot_ui_1" to="." method="_on_alchemy_craftables_slot_ui_1_potion_selected"]
