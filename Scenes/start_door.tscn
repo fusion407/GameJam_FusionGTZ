@@ -37,6 +37,7 @@ offset_left = -13025.0
 offset_top = 6051.78
 offset_right = -11871.0
 offset_bottom = 6700.78
+mouse_filter = 2
 
 [node name="fade_timer" type="Timer" parent="Fade_transition"]
 

@@ -12,10 +12,11 @@ anchors_preset = 0
 offset_right = 121.0
 offset_bottom = 84.0
 scale = Vector2(0.82212, 0.730773)
+mouse_filter = 2
 script = ExtResource("1_0lol8")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-modulate = Color(0.231373, 0.360784, 0.905882, 1)
+modulate = Color(0.471197, 0.789141, 1, 1)
 layout_mode = 0
 offset_right = 121.0
 offset_bottom = 84.0
