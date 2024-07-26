@@ -53,6 +53,8 @@ func death():
 	dead = true
 	$AnimatedSprite2D.play("death")
 	await get_tree().create_timer(1).timeout
+	
+	# todo: write function to calculate item drop chance
 	drop_slime()
 	
 	$AnimatedSprite2D.visible = false

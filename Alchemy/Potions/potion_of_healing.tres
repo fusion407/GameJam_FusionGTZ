@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bytigu3lp3n2y"]
 
 [ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_yhxfj"]
-[ext_resource type="Texture2D" uid="uid://cu0jl77b4m37s" path="res://Art/environment/apple-icon.png" id="2_6qgbx"]
+[ext_resource type="Texture2D" uid="uid://cikp0xfyb16k" path="res://Art/environment/potion.png" id="2_y2uk8"]
 
 [resource]
 script = ExtResource("1_yhxfj")
 name = "Potion of Healing"
-texture = ExtResource("2_6qgbx")
+texture = ExtResource("2_y2uk8")

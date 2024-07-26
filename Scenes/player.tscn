@@ -203,7 +203,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"e-walk",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -362,7 +362,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"w-walk",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a4dxg"]
@@ -375,7 +375,7 @@ inv = ExtResource("2_foq33")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_si7gp")
-animation = &"idle"
+animation = &"w-walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
