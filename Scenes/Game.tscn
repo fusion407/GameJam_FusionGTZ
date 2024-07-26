@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://jai5un104npm"]
+[gd_scene load_steps=17 format=3 uid="uid://jai5un104npm"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_jjewb"]
 [ext_resource type="Texture2D" uid="uid://cvpi02o6fp5e4" path="res://Art/environment/survivalgame-terrian-defult.png" id="2_dumbc"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://h63hienpe3xb" path="res://Scenes/npc.tscn" id="8_s8afd"]
 [ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/fade_transition.tscn" id="10_wnsbl"]
 [ext_resource type="PackedScene" uid="uid://dlaulvfxk1dir" path="res://Scenes/lighter_collectable.tscn" id="11_b0y2j"]
+[ext_resource type="PackedScene" uid="uid://dltlnagj1fcr" path="res://Scenes/bone_collectable.tscn" id="12_yfv5d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4fwde"]
 resource_name = "true"
@@ -667,5 +668,8 @@ autostart = true
 
 [node name="lighter_collectable" parent="." instance=ExtResource("11_b0y2j")]
 position = Vector2(246, 78)
+
+[node name="bone_collectable" parent="." instance=ExtResource("12_yfv5d")]
+position = Vector2(129, 94)
 
 [connection signal="timeout" from="game_timer" to="." method="_on_game_timer_timeout"]
