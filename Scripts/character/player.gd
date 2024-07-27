@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
 var speed = 100
-var health = 1000
+var health = 100
 var base_damage = 10
 var player_state
 
 @export var inv: Inv
-
+@onready var healthbar = $Healthbar
 
 # once the game has ended, make sure game_has_started, and wand_equipped is set to false
 # by default, game_has_started will eventually be set to false so player has to initiate game start function to use wand
@@ -14,9 +14,21 @@ var isAlive = true
 var game_has_started = false
 var wand_equipped = false
 var wand_cooldown = true
-var projectile = preload("res://Scenes/projectile.tscn")
+var projectile = preload("res://Scenes/character/projectile.tscn")
 
 var mouse_loc_from_player = null
+
+func _ready():
+	health = 100
+	isAlive = true
+	healthbar.init_health(health)
+	
+func _set_health(value):
+	health = value
+	if health <= 0 and isAlive:
+		death()
+	
+	healthbar.health = health
 
 func _physics_process(delta):
 	mouse_loc_from_player = get_global_mouse_position() - self.position
@@ -122,7 +134,7 @@ func death():
 	$CollisionShape2D.disabled = true
 	speed = 0
 	get_tree().create_timer(3.0).timeout
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/levels/house.tscn")
 	$CollisionShape2D.disabled = false
 	speed = 100
 	

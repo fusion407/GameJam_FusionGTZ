@@ -1,21 +1,21 @@
 [gd_scene load_steps=17 format=3 uid="uid://jai5un104npm"]
 
-[ext_resource type="Script" path="res://Scripts/Game.gd" id="1_jjewb"]
-[ext_resource type="Texture2D" uid="uid://cvpi02o6fp5e4" path="res://Art/environment/survivalgame-terrian-defult.png" id="2_dumbc"]
-[ext_resource type="Texture2D" uid="uid://ucsjdn5y0oql" path="res://Art/environment/survivalgame-terrian-cliffs.png" id="3_404p5"]
-[ext_resource type="Texture2D" uid="uid://bee8ln8lp0cln" path="res://Art/environment/survivalgame-trees.png" id="4_wg4a2"]
-[ext_resource type="PackedScene" uid="uid://ctssfn3anvs8m" path="res://Scenes/apple_tree.tscn" id="5_r13tf"]
-[ext_resource type="PackedScene" uid="uid://cju20pcdc3i87" path="res://Scenes/stick_collectable.tscn" id="6_wjx4s"]
-[ext_resource type="PackedScene" uid="uid://bfxx8spmpvkfe" path="res://Game-Jam/Art/Player-Character/player. Merlintscn.tscn" id="7_4ghcp"]
-[ext_resource type="PackedScene" uid="uid://dovwaqnf20rb5" path="res://Scenes/slime.tscn" id="7_jy72y"]
-[ext_resource type="PackedScene" uid="uid://h63hienpe3xb" path="res://Scenes/npc.tscn" id="8_s8afd"]
-[ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/fade_transition.tscn" id="10_wnsbl"]
-[ext_resource type="PackedScene" uid="uid://dlaulvfxk1dir" path="res://Scenes/lighter_collectable.tscn" id="11_b0y2j"]
-[ext_resource type="PackedScene" uid="uid://b1351188ahop4" path="res://Scenes/stone_collectable.tscn" id="13_ytc5x"]
+[ext_resource type="Script" path="res://Scripts/levels/Game.gd" id="1_3rbk6"]
+[ext_resource type="Texture2D" uid="uid://cvpi02o6fp5e4" path="res://Art/environment/survivalgame-terrian-defult.png" id="2_hoqn3"]
+[ext_resource type="Texture2D" uid="uid://ucsjdn5y0oql" path="res://Art/environment/survivalgame-terrian-cliffs.png" id="3_mqqla"]
+[ext_resource type="Texture2D" uid="uid://bee8ln8lp0cln" path="res://Art/environment/survivalgame-trees.png" id="4_cffnw"]
+[ext_resource type="PackedScene" uid="uid://ctssfn3anvs8m" path="res://Scenes/interactables/apple_tree.tscn" id="5_t0hdb"]
+[ext_resource type="PackedScene" uid="uid://cju20pcdc3i87" path="res://Scenes/collectables/stick_collectable.tscn" id="6_c0u6n"]
+[ext_resource type="PackedScene" uid="uid://dovwaqnf20rb5" path="res://Scenes/ai/slime.tscn" id="8_mawip"]
+[ext_resource type="PackedScene" uid="uid://h63hienpe3xb" path="res://Scenes/ai/npc.tscn" id="9_e1pcm"]
+[ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/ui/fade_transition.tscn" id="10_4y1va"]
+[ext_resource type="PackedScene" uid="uid://dlaulvfxk1dir" path="res://Scenes/collectables/lighter_collectable.tscn" id="11_auh1k"]
+[ext_resource type="PackedScene" uid="uid://mk8mgi4k3y8e" path="res://Scenes/character/player.tscn" id="12_ixhgd"]
+[ext_resource type="PackedScene" uid="uid://b1351188ahop4" path="res://Scenes/collectables/stone_collectable.tscn" id="12_m44q2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4fwde"]
 resource_name = "true"
-texture = ExtResource("2_dumbc")
+texture = ExtResource("2_hoqn3")
 texture_region_size = Vector2i(40, 40)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -262,7 +262,7 @@ texture_region_size = Vector2i(40, 40)
 18:3/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1p8l"]
-texture = ExtResource("3_404p5")
+texture = ExtResource("3_mqqla")
 texture_region_size = Vector2i(40, 40)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -392,7 +392,7 @@ texture_region_size = Vector2i(40, 40)
 17:2/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5qhec"]
-texture = ExtResource("4_wg4a2")
+texture = ExtResource("4_cffnw")
 texture_region_size = Vector2i(40, 40)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -579,7 +579,7 @@ sources/2 = SubResource("TileSetAtlasSource_5qhec")
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(47, 8)
-script = ExtResource("1_jjewb")
+script = ExtResource("1_3rbk6")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -595,25 +595,23 @@ layer_2/name = "3"
 layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array(-131074, 1114114, 1, 65540, 1114114, 1, 65531, 1114114, 1, -196604, 1114114, 1, 196605, 1114114, 1, -131077, 1114114, 1, 262143, 524290, 0, 196609, 524290, 0, -196607, 524290, 0)
 
-[node name="apple_tree" parent="." instance=ExtResource("5_r13tf")]
+[node name="apple_tree" parent="." instance=ExtResource("5_t0hdb")]
 position = Vector2(97, 16)
 
-[node name="apple_tree2" parent="." instance=ExtResource("5_r13tf")]
+[node name="apple_tree2" parent="." instance=ExtResource("5_t0hdb")]
 position = Vector2(-100, -6)
 
-[node name="stick_collectable" parent="." instance=ExtResource("6_wjx4s")]
+[node name="stick_collectable" parent="." instance=ExtResource("6_c0u6n")]
 position = Vector2(-55, 38)
 
-[node name="stick_collectable2" parent="." instance=ExtResource("6_wjx4s")]
+[node name="stick_collectable2" parent="." instance=ExtResource("6_c0u6n")]
 position = Vector2(86, 111)
 
-[node name="stick_collectable3" parent="." instance=ExtResource("6_wjx4s")]
+[node name="stick_collectable3" parent="." instance=ExtResource("6_c0u6n")]
 position = Vector2(157, -25)
 
-[node name="stick_collectable4" parent="." instance=ExtResource("6_wjx4s")]
+[node name="stick_collectable4" parent="." instance=ExtResource("6_c0u6n")]
 position = Vector2(-170, 85)
-
-[node name="Player" parent="." instance=ExtResource("7_4ghcp")]
 
 [node name="collisions" type="StaticBody2D" parent="."]
 
@@ -623,37 +621,37 @@ polygon = PackedVector2Array(280, -161, 280, 160, -280, 160, -280, -160, 302, -1
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collisions"]
 polygon = PackedVector2Array(-105, -125, -104, -48, 19, -45, 26, -58, 26, -125, 14, -137, -96, -136)
 
-[node name="slime" parent="." instance=ExtResource("7_jy72y")]
+[node name="slime" parent="." instance=ExtResource("8_mawip")]
 position = Vector2(-50, 112)
 
-[node name="slime2" parent="." instance=ExtResource("7_jy72y")]
+[node name="slime2" parent="." instance=ExtResource("8_mawip")]
 position = Vector2(-233, 72)
 
-[node name="slime3" parent="." instance=ExtResource("7_jy72y")]
+[node name="slime3" parent="." instance=ExtResource("8_mawip")]
 position = Vector2(-233, 128)
 
-[node name="slime4" parent="." instance=ExtResource("7_jy72y")]
+[node name="slime4" parent="." instance=ExtResource("8_mawip")]
 position = Vector2(-233, 18)
 
-[node name="slime5" parent="." instance=ExtResource("7_jy72y")]
+[node name="slime5" parent="." instance=ExtResource("8_mawip")]
 position = Vector2(-233, -13)
 
-[node name="slime6" parent="." instance=ExtResource("7_jy72y")]
+[node name="slime6" parent="." instance=ExtResource("8_mawip")]
 position = Vector2(-239, -35)
 
-[node name="slime7" parent="." instance=ExtResource("7_jy72y")]
+[node name="slime7" parent="." instance=ExtResource("8_mawip")]
 position = Vector2(-202, -46)
 
-[node name="slime8" parent="." instance=ExtResource("7_jy72y")]
+[node name="slime8" parent="." instance=ExtResource("8_mawip")]
 position = Vector2(-185, -23)
 
-[node name="slime9" parent="." instance=ExtResource("7_jy72y")]
+[node name="slime9" parent="." instance=ExtResource("8_mawip")]
 position = Vector2(-159, -2)
 
-[node name="npc" parent="." instance=ExtResource("8_s8afd")]
+[node name="npc" parent="." instance=ExtResource("9_e1pcm")]
 position = Vector2(111, -55)
 
-[node name="Fade_transition" parent="." instance=ExtResource("10_wnsbl")]
+[node name="Fade_transition" parent="." instance=ExtResource("10_4y1va")]
 offset_left = -12753.0
 offset_top = 6330.0
 offset_right = -11599.0
@@ -668,10 +666,13 @@ wait_time = 60.0
 one_shot = true
 autostart = true
 
-[node name="lighter_collectable" parent="." instance=ExtResource("11_b0y2j")]
+[node name="lighter_collectable" parent="." instance=ExtResource("11_auh1k")]
 position = Vector2(246, 78)
 
-[node name="stone_collectable" parent="." instance=ExtResource("13_ytc5x")]
+[node name="stone_collectable" parent="." instance=ExtResource("12_m44q2")]
 position = Vector2(15, 28)
+
+[node name="Player" parent="." instance=ExtResource("12_ixhgd")]
+position = Vector2(205, -43)
 
 [connection signal="timeout" from="game_timer" to="." method="_on_game_timer_timeout"]

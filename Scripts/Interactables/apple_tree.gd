@@ -3,7 +3,7 @@ extends Node2D
 var state = "no apples" # no apples, apples
 var player_in_area = false
 
-var apple = preload("res://Scenes/apple_collectable.tscn")
+var apple = preload("res://Scenes/collectables/apple_collectable.tscn")
 
 @export var item: InvItem
 var player = null

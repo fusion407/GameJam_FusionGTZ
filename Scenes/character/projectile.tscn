@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dtwyndsdq5bu6"]
 
-[ext_resource type="Script" path="res://Scripts/projectile.gd" id="1_ve484"]
+[ext_resource type="Script" path="res://Scripts/character/projectile.gd" id="1_ve484"]
 [ext_resource type="Texture2D" uid="uid://bqnjog31eqkxb" path="res://icon.svg" id="2_mwty8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_poaft"]

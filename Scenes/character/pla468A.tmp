@@ -1,10 +1,11 @@
-[gd_scene load_steps=50 format=3 uid="uid://mk8mgi4k3y8e"]
+[gd_scene load_steps=51 format=3 uid="uid://mk8mgi4k3y8e"]
 
 [ext_resource type="Texture2D" uid="uid://b71irqvvob440" path="res://Art/character/survivalgame-player-green.png" id="1_15g3b"]
 [ext_resource type="Resource" uid="uid://ofyync6tt6g0" path="res://Inventory/player_inventory.tres" id="2_foq33"]
-[ext_resource type="Script" path="res://Scripts/player.gd" id="2_mor53"]
+[ext_resource type="Script" path="res://Scripts/character/player.gd" id="2_mor53"]
 [ext_resource type="Texture2D" uid="uid://4k25xw6tl0ke" path="res://Art/character/wizard_spritesheet.png" id="4_3smko"]
-[ext_resource type="PackedScene" uid="uid://btlj57wlq6d6m" path="res://Inventory/inventory_ui.tscn" id="4_idabu"]
+[ext_resource type="PackedScene" uid="uid://btlj57wlq6d6m" path="res://Inventory/scenes/inventory_ui.tscn" id="4_idabu"]
+[ext_resource type="PackedScene" uid="uid://cgumsabfxhisk" path="res://healthbar/healthbar.tscn" id="6_1l2of"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l4gsh"]
 atlas = ExtResource("4_3smko")
@@ -445,3 +446,9 @@ text = "[TAB] - Inventory
 [E] - Search
 [F] - Interact
 [Q] - Drink potion"
+
+[node name="Healthbar" parent="." instance=ExtResource("6_1l2of")]
+offset_left = -192.0
+offset_top = -108.0
+offset_right = -112.0
+offset_bottom = -93.0

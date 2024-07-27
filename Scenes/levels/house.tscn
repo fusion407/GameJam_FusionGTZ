@@ -1,14 +1,14 @@
 [gd_scene load_steps=9 format=3 uid="uid://dk32b0y5hefod"]
 
-[ext_resource type="Texture2D" uid="uid://cvpi02o6fp5e4" path="res://Art/environment/survivalgame-terrian-defult.png" id="1_3i80e"]
-[ext_resource type="Script" path="res://Scenes/house.gd" id="1_u0l8m"]
-[ext_resource type="PackedScene" uid="uid://mk8mgi4k3y8e" path="res://Scenes/player.tscn" id="2_1erbp"]
-[ext_resource type="PackedScene" uid="uid://l5gdu70e2x4s" path="res://Scenes/start_door.tscn" id="3_u620a"]
-[ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/fade_transition.tscn" id="4_t5njv"]
-[ext_resource type="PackedScene" uid="uid://bwdogjp6qja5d" path="res://Alchemy/Scenes/alchemy_table.tscn" id="5_emssn"]
+[ext_resource type="Script" path="res://Scripts/levels/house.gd" id="1_4afgw"]
+[ext_resource type="Texture2D" uid="uid://cvpi02o6fp5e4" path="res://Art/environment/survivalgame-terrian-defult.png" id="2_pp8pr"]
+[ext_resource type="PackedScene" uid="uid://bwdogjp6qja5d" path="res://Alchemy/Scenes/alchemy_table.tscn" id="3_2gx3e"]
+[ext_resource type="PackedScene" uid="uid://l5gdu70e2x4s" path="res://Scenes/interactables/start_door.tscn" id="4_jhm0s"]
+[ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/ui/fade_transition.tscn" id="5_53u4s"]
+[ext_resource type="PackedScene" uid="uid://mk8mgi4k3y8e" path="res://Scenes/character/player.tscn" id="6_habrv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cm1ia"]
-texture = ExtResource("1_3i80e")
+texture = ExtResource("2_pp8pr")
 texture_region_size = Vector2i(40, 40)
 0:0/0 = 0
 1:0/0 = 0
@@ -97,21 +97,21 @@ tile_size = Vector2i(40, 40)
 sources/0 = SubResource("TileSetAtlasSource_cm1ia")
 
 [node name="house" type="Node2D"]
-script = ExtResource("1_u0l8m")
+script = ExtResource("1_4afgw")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_l885j")
 format = 2
 layer_0/tile_data = PackedInt32Array(65535, 524288, 1, 0, 524288, 1, -65536, 524288, 1, -1, 524288, 1, -65538, 524288, 1, -2, 524288, 1, 65534, 524288, 1, 131070, 720896, 1, 131071, 720896, 1, 65536, 720896, 1, 65537, 720896, 1, 1, 524288, 1, -65535, 524288, 1, -131071, 524288, 1, -131072, 524288, 1, -65537, 524288, 1, -196607, 524288, 1, -196608, 524288, 1, -131073, 524288, 1, -131074, 524288, 1, -131075, 524288, 1, -65539, 524288, 1, -3, 524288, 1, 65533, 524288, 1, 131069, 720896, 1, 196605, 720896, 1, 196606, 720896, 1, 196607, 720896, 1, 131072, 720896, 1, 131073, 720896, 1, 131074, 720896, 1, 65538, 720896, 1, 2, 524288, 1, -65534, 524288, 1, -131070, 524288, 1, -196606, 524288, 1, -131076, 524288, 1, -65540, 524288, 1, -4, 524288, 1, 65532, 524288, 1, 131068, 720896, 1, 196604, 720896, 1, 131075, 720896, 1, 65539, 720896, 1, 3, 524288, 1, -65533, 524288, 1, -131069, 524288, 1, -196605, 524288, 1, -131077, 720896, 1, 196603, 720896, 1, 131076, 720896, 1, -196604, 720896, 1, -131068, 720896, 1, -65532, 720896, 1, 4, 720896, 1, 65540, 720896, 1, 131067, 720896, 1, 65531, 720896, 1, -5, 720896, 1, -65541, 720896, 1)
 
-[node name="alchemy_table" parent="." instance=ExtResource("5_emssn")]
+[node name="alchemy_table" parent="." instance=ExtResource("3_2gx3e")]
 position = Vector2(-97, -53)
 
-[node name="start_door" parent="." instance=ExtResource("3_u620a")]
+[node name="start_door" parent="." instance=ExtResource("4_jhm0s")]
 position = Vector2(0, -117)
 scale = Vector2(0.602401, 0.551109)
 
-[node name="Fade_transition" parent="." instance=ExtResource("4_t5njv")]
+[node name="Fade_transition" parent="." instance=ExtResource("5_53u4s")]
 offset_left = -13042.0
 offset_top = 6012.0
 offset_right = -11888.0
@@ -120,4 +120,4 @@ mouse_filter = 2
 
 [node name="fade_timer" type="Timer" parent="Fade_transition"]
 
-[node name="Player" parent="." instance=ExtResource("2_1erbp")]
+[node name="Player" parent="." instance=ExtResource("6_habrv")]

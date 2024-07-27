@@ -1,15 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://vs6dng2sm34i"]
 
-[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_aclx5"]
-[ext_resource type="Texture2D" uid="uid://b70n60or5w1c0" path="res://Art/Thor.png" id="2_cdmou"]
-[ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/fade_transition.tscn" id="2_ioio7"]
+[ext_resource type="Script" path="res://Scripts/levels/main_menu.gd" id="1_4dcuw"]
+[ext_resource type="Texture2D" uid="uid://b70n60or5w1c0" path="res://Art/Thor.png" id="2_wopnq"]
+[ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/ui/fade_transition.tscn" id="3_jvrjd"]
 
 [node name="main_menu" type="Node2D"]
-script = ExtResource("1_aclx5")
+script = ExtResource("1_4dcuw")
 
 [node name="Thor" type="Sprite2D" parent="."]
 position = Vector2(299, 310)
-texture = ExtResource("2_cdmou")
+texture = ExtResource("2_wopnq")
 
 [node name="button_manager" type="Control" parent="."]
 layout_mode = 3
@@ -60,7 +60,7 @@ offset_bottom = 221.0
 theme_override_font_sizes/normal_font_size = 48
 text = "The Wizard of Nah"
 
-[node name="Fade_transition" parent="." instance=ExtResource("2_ioio7")]
+[node name="Fade_transition" parent="." instance=ExtResource("3_jvrjd")]
 visible = false
 
 [node name="fade_timer" type="Timer" parent="Fade_transition"]

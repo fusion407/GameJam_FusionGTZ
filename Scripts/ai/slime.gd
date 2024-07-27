@@ -61,11 +61,11 @@ func take_damage(damage):
 		death()
 		
 func deal_damage(damage):
+	var new_health = player.health - damage
 	if player.health <= 0:
 		player.death()
 	else:
-		player.health = player.health - damage
-		print(player.health)	
+		player._set_health(new_health)	
 
 func death():
 	dead = true

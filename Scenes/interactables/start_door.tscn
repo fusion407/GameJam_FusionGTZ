@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://l5gdu70e2x4s"]
 
-[ext_resource type="Script" path="res://Scenes/start_door.gd" id="1_s08pp"]
+[ext_resource type="Script" path="res://Scripts/Interactables/start_door.gd" id="1_s08pp"]
 [ext_resource type="Texture2D" uid="uid://b70n60or5w1c0" path="res://Art/Thor.png" id="2_kvaop"]
-[ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/fade_transition.tscn" id="3_8usa1"]
+[ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/ui/fade_transition.tscn" id="3_8usa1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w84p0"]
 size = Vector2(99.9998, 26.7857)
