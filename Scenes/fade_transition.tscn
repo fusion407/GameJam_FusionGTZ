@@ -36,7 +36,7 @@ _data = {
 "fade_out": SubResource("Animation_oucle")
 }
 
-[node name="fade_transition" type="ColorRect"]
+[node name="Fade_transition" type="ColorRect"]
 offset_left = -13043.0
 offset_top = 6048.0
 offset_right = -11889.0

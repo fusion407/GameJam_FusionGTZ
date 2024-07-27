@@ -111,8 +111,6 @@ position = Vector2(-97, -53)
 position = Vector2(0, -117)
 scale = Vector2(0.602401, 0.551109)
 
-[node name="Player" parent="." instance=ExtResource("2_1erbp")]
-
 [node name="Fade_transition" parent="." instance=ExtResource("4_t5njv")]
 offset_left = -13042.0
 offset_top = 6012.0
@@ -121,3 +119,5 @@ offset_bottom = 6661.0
 mouse_filter = 2
 
 [node name="fade_timer" type="Timer" parent="Fade_transition"]
+
+[node name="Player" parent="." instance=ExtResource("2_1erbp")]

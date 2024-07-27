@@ -29,7 +29,7 @@ func _physics_process(delta):
 		else:
 			$AnimatedSprite2D.play("idle")
 			
-		if colliding_with_player:
+		if colliding_with_player and player.isAlive:
 			deal_damage(slime_damage)	
 		
 	if dead:
@@ -61,8 +61,11 @@ func take_damage(damage):
 		death()
 		
 func deal_damage(damage):
+	if player.health <= 0:
+		player.death()
+		
 	player.health = player.health - damage
-	print(player.health)		
+	print(player.health)	
 
 func death():
 	dead = true
