@@ -658,11 +658,13 @@ offset_left = -12753.0
 offset_top = 6330.0
 offset_right = -11599.0
 offset_bottom = 6979.0
+mouse_filter = 2
 
 [node name="fade_timer" type="Timer" parent="Fade_transition"]
+wait_time = 3.0
 
 [node name="game_timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 60.0
 one_shot = true
 autostart = true
 

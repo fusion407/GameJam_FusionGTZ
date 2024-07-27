@@ -10,6 +10,7 @@ var player_state
 
 # once the game has ended, make sure game_has_started, and wand_equipped is set to false
 # by default, game_has_started will eventually be set to false so player has to initiate game start function to use wand
+var isAlive = true
 var game_has_started = false
 var wand_equipped = false
 var wand_cooldown = true
@@ -24,10 +25,12 @@ func _physics_process(delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
 	
 	# set state of players idle and walking animations, and calculate velocity
-	if direction.x == 0 and direction.y == 0:
-		player_state = "idle"
-	elif direction.x != 0 or direction.y != 0:
-		player_state = "walking"
+	if isAlive:
+		if direction.x == 0 and direction.y == 0:
+			player_state = "idle"
+		elif direction.x != 0 or direction.y != 0:
+			player_state = "walking"
+		
 		
 	velocity = direction * speed
 	move_and_slide()
@@ -112,5 +115,18 @@ func player():
 func collect(item):
 	inv.insert(item)
 	
-	# hello - corbin
+func death():
+	isAlive = false
+	print("player is dead lol")
+	$AnimatedSprite2D.play("death")
+	$CollisionShape2D.disabled = true
+	speed = 0
+	get_tree().create_timer(3.0).timeout
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	$CollisionShape2D.disabled = false
+	speed = 100
+	
 
+	
+	
+	# hello - corbin
