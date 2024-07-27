@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 var speed = 100
-
+var health = 1000
+var base_damage = 10
 var player_state
 
 @export var inv: Inv
@@ -112,3 +113,4 @@ func collect(item):
 	inv.insert(item)
 	
 	# hello - corbin
+
