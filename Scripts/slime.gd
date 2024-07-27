@@ -2,8 +2,10 @@ extends CharacterBody2D
 
 var speed = 100
 var health = 100
+var slime_damage = 1
 
 var dead = false
+var colliding_with_player = false
 var player_in_area = false
 var player = null
 var randNum
@@ -27,6 +29,9 @@ func _physics_process(delta):
 		else:
 			$AnimatedSprite2D.play("idle")
 			
+		if colliding_with_player:
+			deal_damage(slime_damage)	
+		
 	if dead:
 		$detection_area/CollisionShape2D.disabled = true
 
@@ -55,6 +60,10 @@ func take_damage(damage):
 	if health <= 0 and !dead:
 		death()
 		
+func deal_damage(damage):
+	player.health = player.health - damage
+	print(player.health)		
+
 func death():
 	dead = true
 	$AnimatedSprite2D.play("death")
@@ -104,3 +113,13 @@ func bone_collect():
 func _on_slime_collect_area_body_entered(body):
 	if body.has_method("player"):
 		player = body
+
+
+func _on_hitbox_body_entered(body):
+	if body.has_method("player"):
+		colliding_with_player = true
+
+
+func _on_hitbox_body_exited(body):
+	if body.has_method("player"):
+		colliding_with_player = false
