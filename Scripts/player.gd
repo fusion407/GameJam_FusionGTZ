@@ -120,16 +120,13 @@ func death():
 	print("player is dead lol")
 	$AnimatedSprite2D.play("death")
 	$CollisionShape2D.disabled = true
-	get_tree().create_timer(3.0)
-	$Fade_transition.show()
-	$Fade_transition/fade_timer.start()
-	$Fade_transition/AnimationPlayer.play("fade_in")
+	speed = 0
+	get_tree().create_timer(3.0).timeout
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	$CollisionShape2D.disabled = false
+	speed = 100
+	
 
 	
 	
 	# hello - corbin
-
-
-
-func _on_fade_timer_timeout():
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

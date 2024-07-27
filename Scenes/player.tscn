@@ -1,11 +1,10 @@
-[gd_scene load_steps=51 format=3 uid="uid://mk8mgi4k3y8e"]
+[gd_scene load_steps=50 format=3 uid="uid://mk8mgi4k3y8e"]
 
 [ext_resource type="Texture2D" uid="uid://b71irqvvob440" path="res://Art/character/survivalgame-player-green.png" id="1_15g3b"]
 [ext_resource type="Resource" uid="uid://ofyync6tt6g0" path="res://Inventory/player_inventory.tres" id="2_foq33"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="2_mor53"]
 [ext_resource type="Texture2D" uid="uid://4k25xw6tl0ke" path="res://Art/character/wizard_spritesheet.png" id="4_3smko"]
 [ext_resource type="PackedScene" uid="uid://btlj57wlq6d6m" path="res://Inventory/inventory_ui.tscn" id="4_idabu"]
-[ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/fade_transition.tscn" id="6_vcate"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l4gsh"]
 atlas = ExtResource("4_3smko")
@@ -446,11 +445,3 @@ text = "[TAB] - Inventory
 [E] - Search
 [F] - Interact
 [Q] - Drink potion"
-
-[node name="Fade_transition" parent="." instance=ExtResource("6_vcate")]
-visible = false
-mouse_filter = 2
-
-[node name="fade_timer" type="Timer" parent="Fade_transition"]
-
-[connection signal="timeout" from="Fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]

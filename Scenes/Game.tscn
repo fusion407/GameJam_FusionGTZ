@@ -658,11 +658,13 @@ offset_left = -12753.0
 offset_top = 6330.0
 offset_right = -11599.0
 offset_bottom = 6979.0
+mouse_filter = 2
 
 [node name="fade_timer" type="Timer" parent="Fade_transition"]
+wait_time = 3.0
 
 [node name="game_timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 60.0
 one_shot = true
 autostart = true
 
@@ -672,5 +674,4 @@ position = Vector2(246, 78)
 [node name="stone_collectable" parent="." instance=ExtResource("13_ytc5x")]
 position = Vector2(15, 28)
 
-[connection signal="timeout" from="Fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
 [connection signal="timeout" from="game_timer" to="." method="_on_game_timer_timeout"]
