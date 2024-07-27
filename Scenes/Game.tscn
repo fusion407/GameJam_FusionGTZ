@@ -11,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://h63hienpe3xb" path="res://Scenes/npc.tscn" id="8_s8afd"]
 [ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/fade_transition.tscn" id="10_wnsbl"]
 [ext_resource type="PackedScene" uid="uid://dlaulvfxk1dir" path="res://Scenes/lighter_collectable.tscn" id="11_b0y2j"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="PackedScene" path="res://Scenes/stone_collectable.tscn" id="13_ytc5x"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4fwde"]
 resource_name = "true"
@@ -612,9 +616,12 @@ position = Vector2(157, -25)
 [node name="stick_collectable4" parent="." instance=ExtResource("6_wjx4s")]
 position = Vector2(-170, 85)
 
+<<<<<<< Updated upstream
 [node name="Player" parent="." instance=ExtResource("1_04wao")]
 position = Vector2(218, 1)
 
+=======
+>>>>>>> Stashed changes
 [node name="collisions" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
@@ -622,33 +629,6 @@ polygon = PackedVector2Array(280, -161, 280, 160, -280, 160, -280, -160, 302, -1
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collisions"]
 polygon = PackedVector2Array(-105, -125, -104, -48, 19, -45, 26, -58, 26, -125, 14, -137, -96, -136)
-
-[node name="slime" parent="." instance=ExtResource("7_jy72y")]
-position = Vector2(-50, 112)
-
-[node name="slime2" parent="." instance=ExtResource("7_jy72y")]
-position = Vector2(-233, 72)
-
-[node name="slime3" parent="." instance=ExtResource("7_jy72y")]
-position = Vector2(-233, 128)
-
-[node name="slime4" parent="." instance=ExtResource("7_jy72y")]
-position = Vector2(-233, 18)
-
-[node name="slime5" parent="." instance=ExtResource("7_jy72y")]
-position = Vector2(-233, -13)
-
-[node name="slime6" parent="." instance=ExtResource("7_jy72y")]
-position = Vector2(-239, -35)
-
-[node name="slime7" parent="." instance=ExtResource("7_jy72y")]
-position = Vector2(-202, -46)
-
-[node name="slime8" parent="." instance=ExtResource("7_jy72y")]
-position = Vector2(-185, -23)
-
-[node name="slime9" parent="." instance=ExtResource("7_jy72y")]
-position = Vector2(-159, -2)
 
 [node name="npc" parent="." instance=ExtResource("8_s8afd")]
 position = Vector2(111, -55)
@@ -665,4 +645,15 @@ autostart = true
 [node name="lighter_collectable" parent="." instance=ExtResource("11_b0y2j")]
 position = Vector2(246, 78)
 
+<<<<<<< Updated upstream
+=======
+[node name="stone_collectable" parent="." instance=ExtResource("13_ytc5x")]
+position = Vector2(15, 28)
+
+[node name="slime" parent="." instance=ExtResource("7_jy72y")]
+position = Vector2(120, 79)
+
+[node name="Player" parent="." instance=ExtResource("7_4ghcp")]
+
+>>>>>>> Stashed changes
 [connection signal="timeout" from="game_timer" to="." method="_on_game_timer_timeout"]

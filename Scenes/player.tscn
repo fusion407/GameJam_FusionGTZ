@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://mk8mgi4k3y8e"]
+[gd_scene load_steps=47 format=3 uid="uid://mk8mgi4k3y8e"]
 
 [ext_resource type="Texture2D" uid="uid://b71irqvvob440" path="res://Art/character/survivalgame-player-green.png" id="1_15g3b"]
 [ext_resource type="Resource" uid="uid://ofyync6tt6g0" path="res://Inventory/player_inventory.tres" id="2_foq33"]
@@ -366,7 +366,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a4dxg"]
-radius = 5.0
+radius = 5.09902
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rn461"]
+radius = 17.0294
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -375,11 +378,7 @@ inv = ExtResource("2_foq33")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_si7gp")
-animation = &"w-walk"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
-shape = SubResource("CircleShape2D_a4dxg")
+animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
@@ -403,3 +402,13 @@ text = "[TAB] - Inventory
 [E] - Search
 [F] - Interact
 [Q] - Drink potion"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_a4dxg")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_rn461")

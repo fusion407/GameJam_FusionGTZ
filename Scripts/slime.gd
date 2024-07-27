@@ -1,11 +1,20 @@
 extends CharacterBody2D
+class_name Slime
 
 var speed = 100
 var health = 100
+var slime_damage = 1
 
 var dead = false
+<<<<<<< Updated upstream
 var player_in_area
 var player
+=======
+var player_in_area = false
+var colliding_with_player = false
+var player = null
+var randNum
+>>>>>>> Stashed changes
 
 @onready var slime = $slime_collectable
 @export var itemRes: InvItem
@@ -21,6 +30,9 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("move")
 		else:
 			$AnimatedSprite2D.play("idle")
+			
+		if colliding_with_player:
+			deal_damage(slime_damage)
 			
 	if dead:
 		$detection_area/CollisionShape2D.disabled = true
@@ -44,11 +56,21 @@ func _on_hitbox_area_entered(area):
 		damage = 50
 		take_damage(damage)
 
+		
+
+
 func take_damage(damage):
 	health = health - damage
 	if health <= 0 and !dead:
 		death()
-		
+
+func deal_damage(damage):
+	player.health = player.health - damage
+	print(player.health)
+
+	
+	
+
 func death():
 	dead = true
 	$AnimatedSprite2D.play("death")
@@ -77,3 +99,16 @@ func slime_collect():
 func _on_slime_collect_area_body_entered(body):
 	if body.has_method("player"):
 		player = body
+
+func enemy_slime():
+	pass
+
+
+func _on_hitbox_body_entered(body):
+	if body.has_method("player"):
+		colliding_with_player = true
+
+
+func _on_hitbox_body_exited(body):
+	if body.has_method("player"):
+		colliding_with_player = false

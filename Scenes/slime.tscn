@@ -1,9 +1,17 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=28 format=3 uid="uid://dovwaqnf20rb5"]
+=======
+[gd_scene load_steps=30 format=3 uid="uid://dovwaqnf20rb5"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://b83ssuu0ktyd8" path="res://Art/character/survivalgame-enemy-slime.png" id="1_fwice"]
 [ext_resource type="Script" path="res://Scripts/slime.gd" id="1_m2yhv"]
 [ext_resource type="Resource" uid="uid://vct6dlo6gekk" path="res://Inventory/items/slime.tres" id="2_p1myr"]
 [ext_resource type="PackedScene" uid="uid://bd7t48nvcjom2" path="res://Scenes/slime_collectable.tscn" id="3_42oqm"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="PackedScene" path="res://Scenes/bone_collectable.tscn" id="5_bvxri"]
+>>>>>>> Stashed changes
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_747lh"]
 atlas = ExtResource("1_fwice")
@@ -149,7 +157,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nn6lg"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_omj7w"]
 radius = 6.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qc6ub"]
@@ -161,7 +169,11 @@ radius = 98.0051
 [sub_resource type="CircleShape2D" id="CircleShape2D_dckfg"]
 radius = 198.003
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vxmwp"]
+radius = 12.0
+
 [node name="slime" type="CharacterBody2D"]
+disable_mode = 1
 script = ExtResource("1_m2yhv")
 itemRes = ExtResource("2_p1myr")
 
@@ -170,7 +182,7 @@ sprite_frames = SubResource("SpriteFrames_mjrqi")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_nn6lg")
+shape = SubResource("CircleShape2D_omj7w")
 
 [node name="hitbox" type="Area2D" parent="."]
 
@@ -191,7 +203,23 @@ visible = false
 shape = SubResource("CircleShape2D_dckfg")
 disabled = true
 
+<<<<<<< Updated upstream
+=======
+[node name="bone_collectable" parent="." instance=ExtResource("5_bvxri")]
+visible = false
+
+[node name="damage_collision" type="StaticBody2D" parent="."]
+top_level = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damage_collision"]
+shape = SubResource("CircleShape2D_vxmwp")
+
+[node name="Timer" type="Timer" parent="."]
+
+>>>>>>> Stashed changes
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="slime_collect_area" to="." method="_on_slime_collect_area_body_entered"]
