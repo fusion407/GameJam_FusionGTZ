@@ -1,8 +1,8 @@
 [gd_scene load_steps=25 format=3 uid="uid://h63hienpe3xb"]
 
-[ext_resource type="Script" path="res://Scenes/npc.gd" id="1_3vhs5"]
+[ext_resource type="Script" path="res://Scripts/ai/npc.gd" id="1_3vhs5"]
 [ext_resource type="Texture2D" uid="uid://x27ks1a607oj" path="res://Art/character/Human-Worker-Red.png" id="1_qsixi"]
-[ext_resource type="PackedScene" uid="uid://dffbroyk8xg74" path="res://Scenes/dialogue.tscn" id="3_dlxf5"]
+[ext_resource type="PackedScene" uid="uid://dffbroyk8xg74" path="res://Scenes/ui/dialogue.tscn" id="3_dlxf5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hdd3f"]
 atlas = ExtResource("1_qsixi")
