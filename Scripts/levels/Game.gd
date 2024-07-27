@@ -19,6 +19,6 @@ func _on_game_timer_timeout():
 	$Fade_transition/fade_timer.start()
 	$Fade_transition/AnimationPlayer.play("fade_in")
 	await get_tree().create_timer(5).timeout
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/levels/main_menu.tscn")
 	
 

@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bee8ln8lp0cln" path="res://Art/environment/survivalgame-trees.png" id="4_cffnw"]
 [ext_resource type="PackedScene" uid="uid://ctssfn3anvs8m" path="res://Scenes/interactables/apple_tree.tscn" id="5_t0hdb"]
 [ext_resource type="PackedScene" uid="uid://cju20pcdc3i87" path="res://Scenes/collectables/stick_collectable.tscn" id="6_c0u6n"]
-[ext_resource type="PackedScene" uid="uid://bfxx8spmpvkfe" path="res://Game-Jam/Art/Player-Character/player. Merlintscn.tscn" id="7_rtvgu"]
 [ext_resource type="PackedScene" uid="uid://dovwaqnf20rb5" path="res://Scenes/ai/slime.tscn" id="8_mawip"]
 [ext_resource type="PackedScene" uid="uid://h63hienpe3xb" path="res://Scenes/ai/npc.tscn" id="9_e1pcm"]
 [ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/ui/fade_transition.tscn" id="10_4y1va"]
 [ext_resource type="PackedScene" uid="uid://dlaulvfxk1dir" path="res://Scenes/collectables/lighter_collectable.tscn" id="11_auh1k"]
+[ext_resource type="PackedScene" uid="uid://mk8mgi4k3y8e" path="res://Scenes/character/player.tscn" id="12_ixhgd"]
 [ext_resource type="PackedScene" uid="uid://b1351188ahop4" path="res://Scenes/collectables/stone_collectable.tscn" id="12_m44q2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4fwde"]
@@ -613,8 +613,6 @@ position = Vector2(157, -25)
 [node name="stick_collectable4" parent="." instance=ExtResource("6_c0u6n")]
 position = Vector2(-170, 85)
 
-[node name="Player" parent="." instance=ExtResource("7_rtvgu")]
-
 [node name="collisions" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
@@ -673,5 +671,8 @@ position = Vector2(246, 78)
 
 [node name="stone_collectable" parent="." instance=ExtResource("12_m44q2")]
 position = Vector2(15, 28)
+
+[node name="Player" parent="." instance=ExtResource("12_ixhgd")]
+position = Vector2(205, -43)
 
 [connection signal="timeout" from="game_timer" to="." method="_on_game_timer_timeout"]

@@ -37,4 +37,4 @@ func _on_start_game_area_body_exited(body):
 
 
 func _on_fade_timer_timeout():
-	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
+	get_tree().change_scene_to_file("res://Scenes/levels/Game.tscn")
