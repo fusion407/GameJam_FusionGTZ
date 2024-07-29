@@ -16,7 +16,8 @@ func _process(delta):
 			print("opened alchemy table")
 			$CanvasLayer/alchemy_ui.start()
 			is_using = true
-
+	if is_using and player_in_table_zone:
+		pass
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("player"):

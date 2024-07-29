@@ -15,7 +15,6 @@ mouse_filter = 2
 script = ExtResource("1_0lol8")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-modulate = Color(0.471197, 0.789141, 1, 1)
 layout_mode = 0
 offset_right = 142.0
 offset_bottom = 108.0
@@ -31,7 +30,7 @@ offset_left = 33.15
 offset_right = 186.15
 offset_bottom = 27.0
 scale = Vector2(0.608227, 0.608227)
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 text = "Alchemy Table"
 
 [node name="alchemy_craftables_ui" parent="." instance=ExtResource("3_aecfg")]

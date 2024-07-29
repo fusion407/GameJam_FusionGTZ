@@ -6,6 +6,7 @@ var base_damage = 10
 var player_state
 
 @export var inv: Inv
+@export var pot: Pot
 @onready var healthbar = $Healthbar
 
 # once the game has ended, make sure game_has_started, and wand_equipped is set to false
@@ -127,6 +128,11 @@ func player():
 func collect(item):
 	inv.insert(item)
 	
+	
+func craftPotion(potion):
+	pot.insert(potion)
+	
+
 func death():
 	isAlive = false
 	print("player is dead lol")
