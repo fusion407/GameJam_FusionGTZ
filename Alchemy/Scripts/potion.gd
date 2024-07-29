@@ -15,4 +15,4 @@ func insert(potion: PotItem):
 		if !emptySlots.is_empty():
 			emptySlots[0].pot = potion
 			emptySlots[0].amount = 1
-
+	update.emit()
