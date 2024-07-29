@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjtc1aa4kxyom"]
+
+[ext_resource type="Texture2D" uid="uid://cd3jku4vlg8bx" path="res://Art/environment/ring.png" id="1_ur3dd"]
+
+[node name="ring_collectable" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ur3dd")
