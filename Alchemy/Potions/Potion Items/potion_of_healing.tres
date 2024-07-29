@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotItem" load_steps=3 format=3 uid="uid://lxgxqvl37xgx"]
+
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_item.gd" id="1_csiu2"]
+[ext_resource type="Texture2D" uid="uid://baqyhbqgl2x4g" path="res://Art/inventory_art/potions/red_potion.png" id="2_30jyv"]
+
+[resource]
+script = ExtResource("1_csiu2")
+name = "Potion of Healing"
+texture = ExtResource("2_30jyv")

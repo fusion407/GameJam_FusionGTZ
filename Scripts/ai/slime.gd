@@ -29,11 +29,12 @@ func _physics_process(delta):
 		else:
 			$AnimatedSprite2D.play("idle")
 			
-		if colliding_with_player and player.isAlive:
+		if colliding_with_player and player.isAlive and !dead:
 			deal_damage(slime_damage)	
 		
 	if dead:
 		$detection_area/CollisionShape2D.disabled = true
+		$CollisionShape2D.disabled = true
 
 
 func _on_detection_area_body_entered(body):
@@ -82,10 +83,10 @@ func death():
 	elif randNum <= 85 && randNum >= 35:     # 50% chance to drop slime
 		drop_slime()     
 	# else - 35% no drops for wizard, get rekt
-	
 	$AnimatedSprite2D.visible = false
 	$hitbox/CollisionShape2D.disabled = true
 	$detection_area/CollisionShape2D.disabled = true
+	
 	
 # drop and collection functions
 func drop_slime():

@@ -1,6 +1,6 @@
 extends Control
 
-@onready var pot: Pot = preload("res://Alchemy/Potions/Craftable Slots/craftable_potions.tres")
+@onready var pot: Pot = preload("res://Alchemy/Potions/Potion Slots/craftable_potions.tres")
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
 
 
