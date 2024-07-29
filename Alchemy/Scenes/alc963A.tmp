@@ -174,4 +174,4 @@ text = "Potions"
 
 [connection signal="selectPotion" from="NinePatchRect/GridContainer/alchemy_craftables_slot_ui_1" to="." method="_on_alchemy_craftables_slot_ui_1_select_potion"]
 [connection signal="selectPotion" from="NinePatchRect/GridContainer/alchemy_craftables_slot_ui_2" to="." method="_on_alchemy_craftables_slot_ui_2_select_potion"]
-[connection signal="gui_input" from="CraftButton" to="." method="_on_craft_button_gui_input"]
+[connection signal="button_up" from="CraftButton" to="." method="_on_craft_button_button_up"]

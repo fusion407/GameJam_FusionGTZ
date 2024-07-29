@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotItem" load_steps=3 format=3 uid="uid://pv81oat4m7ec"]
+
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_item.gd" id="1_h32aj"]
+[ext_resource type="Texture2D" uid="uid://cv36pvrudohhy" path="res://Art/inventory_art/potions/lightning_potion.png" id="2_71d0s"]
+
+[resource]
+script = ExtResource("1_h32aj")
+name = "Potion of Speed"
+texture = ExtResource("2_71d0s")

@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvni5q1npouwm"]
+
+[ext_resource type="Texture2D" uid="uid://dqy43lsd3u5ac" path="res://Art/inventory_art/inventory-slot.png" id="1_ci0vp"]
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_ui_slot.gd" id="1_frvsy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vslaq"]
+size = Vector2(16, 16)
+
+[node name="potion_ui_slot" type="Panel"]
+offset_right = 16.0
+offset_bottom = 16.0
+script = ExtResource("1_frvsy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ci0vp")
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="item_display" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[node name="Label" type="Label" parent="CenterContainer/Panel"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 18.0
+offset_bottom = 21.0
+scale = Vector2(0.5, 0.5)
+text = "99"
+horizontal_alignment = 2
+
+[node name="mouse_detection_zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouse_detection_zone"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_vslaq")

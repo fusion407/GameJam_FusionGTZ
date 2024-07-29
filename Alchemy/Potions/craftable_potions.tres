@@ -1,42 +1,50 @@
 [gd_resource type="Resource" script_class="Pot" load_steps=15 format=3 uid="uid://4akfi1v1njmj"]
 
 [ext_resource type="Script" path="res://Alchemy/Scripts/potion.gd" id="1_iglrc"]
-[ext_resource type="Resource" uid="uid://xunxdquqntoa" path="res://Alchemy/Potions/Craftable Slots/potion_of_healing_slot.tres" id="2_as763"]
+[ext_resource type="Resource" uid="uid://xunxdquqntoa" path="res://Alchemy/Potions/Potion Slots/potion_of_healing_slot.tres" id="2_as763"]
+[ext_resource type="Resource" uid="uid://b4syx3gx2vjb6" path="res://Alchemy/Potions/Potion Slots/potion_of_speed_slot.tres" id="3_5sx2g"]
 [ext_resource type="Script" path="res://Alchemy/Scripts/potion_slot.gd" id="3_gjxwx"]
-
-[sub_resource type="Resource" id="Resource_bnyba"]
-script = ExtResource("3_gjxwx")
 
 [sub_resource type="Resource" id="Resource_avb53"]
 script = ExtResource("3_gjxwx")
+amount = 0
 
 [sub_resource type="Resource" id="Resource_u8lnh"]
 script = ExtResource("3_gjxwx")
+amount = 0
 
 [sub_resource type="Resource" id="Resource_08nyo"]
 script = ExtResource("3_gjxwx")
+amount = 0
 
 [sub_resource type="Resource" id="Resource_0hugf"]
 script = ExtResource("3_gjxwx")
+amount = 0
 
 [sub_resource type="Resource" id="Resource_wxtpy"]
 script = ExtResource("3_gjxwx")
+amount = 0
 
 [sub_resource type="Resource" id="Resource_10mo0"]
 script = ExtResource("3_gjxwx")
+amount = 0
 
 [sub_resource type="Resource" id="Resource_lqx53"]
 script = ExtResource("3_gjxwx")
+amount = 0
 
 [sub_resource type="Resource" id="Resource_ihbxi"]
 script = ExtResource("3_gjxwx")
+amount = 0
 
 [sub_resource type="Resource" id="Resource_bef44"]
 script = ExtResource("3_gjxwx")
+amount = 0
 
 [sub_resource type="Resource" id="Resource_esj1g"]
 script = ExtResource("3_gjxwx")
+amount = 0
 
 [resource]
 script = ExtResource("1_iglrc")
-slots = Array[ExtResource("3_gjxwx")]([ExtResource("2_as763"), SubResource("Resource_bnyba"), SubResource("Resource_avb53"), SubResource("Resource_u8lnh"), SubResource("Resource_08nyo"), SubResource("Resource_0hugf"), SubResource("Resource_wxtpy"), SubResource("Resource_10mo0"), SubResource("Resource_lqx53"), SubResource("Resource_ihbxi"), SubResource("Resource_bef44"), SubResource("Resource_esj1g")])
+slots = Array[ExtResource("3_gjxwx")]([ExtResource("2_as763"), ExtResource("3_5sx2g"), SubResource("Resource_avb53"), SubResource("Resource_u8lnh"), SubResource("Resource_08nyo"), SubResource("Resource_0hugf"), SubResource("Resource_wxtpy"), SubResource("Resource_10mo0"), SubResource("Resource_lqx53"), SubResource("Resource_ihbxi"), SubResource("Resource_bef44"), SubResource("Resource_esj1g")])
