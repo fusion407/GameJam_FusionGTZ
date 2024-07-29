@@ -1,6 +1,6 @@
 extends Panel
 
-@onready var pot: Pot = preload("res://Alchemy/Potions/Craftable Slots/craftable_potions.tres")
+@onready var pot: Pot = preload("res://Alchemy/Potions/Potion Slots/craftable_potions.tres")
 @onready var item_visual: Sprite2D = $CenterContainer/Panel/item_display
 
 

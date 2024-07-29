@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cf4rfp5ar8vge"]
 
 [ext_resource type="Script" path="res://Inventory/scripts/inventory_item.gd" id="1_8tkuu"]
-[ext_resource type="Texture2D" uid="uid://bbhhok02xr3n1" path="res://Art/environment/potion_blue.png" id="2_ndek8"]
+[ext_resource type="Texture2D" uid="uid://cv36pvrudohhy" path="res://Art/inventory_art/potions/lightning_potion.png" id="2_jlsen"]
 
 [resource]
 script = ExtResource("1_8tkuu")
 name = "Potion of Speed"
-texture = ExtResource("2_ndek8")
+texture = ExtResource("2_jlsen")

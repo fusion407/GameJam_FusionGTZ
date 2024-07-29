@@ -185,6 +185,8 @@ shape = SubResource("CircleShape2D_nr7c2")
 
 [node name="slime_collectable" parent="." instance=ExtResource("3_42oqm")]
 visible = false
+collision_layer = 0
+collision_mask = 0
 
 [node name="slime_collect_area" type="Area2D" parent="."]
 
