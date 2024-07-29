@@ -1,15 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://vs6dng2sm34i"]
+[gd_scene load_steps=5 format=3 uid="uid://vs6dng2sm34i"]
 
 [ext_resource type="Script" path="res://Scripts/levels/main_menu.gd" id="1_4dcuw"]
-[ext_resource type="Texture2D" uid="uid://b70n60or5w1c0" path="res://Art/Thor.png" id="2_wopnq"]
+[ext_resource type="Texture2D" uid="uid://cikp0xfyb16k" path="res://Art/environment/potion.png" id="2_t5em3"]
 [ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/ui/fade_transition.tscn" id="3_jvrjd"]
+[ext_resource type="Texture2D" uid="uid://bbhhok02xr3n1" path="res://Art/environment/potion_blue.png" id="4_jtc4n"]
 
 [node name="main_menu" type="Node2D"]
 script = ExtResource("1_4dcuw")
 
-[node name="Thor" type="Sprite2D" parent="."]
-position = Vector2(299, 310)
-texture = ExtResource("2_wopnq")
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Node2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.88, 16.56)
+color = Color(0, 0, 0, 1)
+
+[node name="Potion" type="Sprite2D" parent="."]
+position = Vector2(189, 332)
+scale = Vector2(51.8333, 51.8333)
+texture = ExtResource("2_t5em3")
+
+[node name="PotionBlue" type="Sprite2D" parent="."]
+position = Vector2(938, 389)
+scale = Vector2(33.1667, 33.1667)
+texture = ExtResource("4_jtc4n")
 
 [node name="button_manager" type="Control" parent="."]
 layout_mode = 3
@@ -53,12 +68,15 @@ grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 333.0
-offset_top = 151.0
-offset_right = 772.0
-offset_bottom = 221.0
+offset_left = 306.0
+offset_top = 127.0
+offset_right = 769.0
+offset_bottom = 197.0
+scale = Vector2(1.415, 1.415)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 48
-text = "The Wizard of Nah"
+text = "Spells & Potions Inc."
 
 [node name="Fade_transition" parent="." instance=ExtResource("3_jvrjd")]
 visible = false
