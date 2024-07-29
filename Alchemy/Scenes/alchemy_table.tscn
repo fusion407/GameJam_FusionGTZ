@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bwdogjp6qja5d"]
 
-[ext_resource type="Texture2D" uid="uid://b70n60or5w1c0" path="res://Art/Thor.png" id="1_itkos"]
 [ext_resource type="Script" path="res://Alchemy/Scripts/alchemy_table.gd" id="1_sfmwd"]
+[ext_resource type="Texture2D" uid="uid://bj7fluxuuplta" path="res://Art/environment/alchemy_table.png" id="2_ub11p"]
 [ext_resource type="PackedScene" uid="uid://br0rqlfh5ypc6" path="res://Alchemy/Scenes/alchemy_ui.tscn" id="3_ej7tb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34138"]
@@ -11,13 +11,13 @@ size = Vector2(12, 14)
 size = Vector2(22, 13)
 
 [node name="alchemy_table" type="Node2D"]
+y_sort_enabled = true
 scale = Vector2(1.74936, 1.69284)
 script = ExtResource("1_sfmwd")
 
-[node name="Thor" type="Sprite2D" parent="."]
-position = Vector2(-2.38419e-07, 2.38419e-07)
-scale = Vector2(0.0212651, 0.0212651)
-texture = ExtResource("1_itkos")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 1)
+texture = ExtResource("2_ub11p")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -33,6 +33,8 @@ shape = SubResource("RectangleShape2D_w70ce")
 
 [node name="use_computer_label" type="Label" parent="."]
 visible = false
+z_index = 1
+y_sort_enabled = true
 offset_left = 6.28801
 offset_top = -8.27014
 offset_right = 26.288

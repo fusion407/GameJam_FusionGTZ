@@ -30,7 +30,6 @@ func _process(delta):
 func _on_craft_button_gui_input(event):
 	if Input.is_action_just_pressed("left_mouse") and event is InputEventMouseButton:
 		potInv.insert(crafted_potion)
-		await get_tree().create_timer(3.0).timeout
 		
 
 
