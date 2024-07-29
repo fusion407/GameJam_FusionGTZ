@@ -14,7 +14,7 @@ func _process(delta):
 func _input(event):
 	if !playerOnDoor:
 		return
-	if event.is_action_pressed("chat"):
+	if event.is_action_pressed("e"):
 		print("game start?")
 		$Fade_transition.show()
 		$Fade_transition/fade_timer.start()
@@ -25,14 +25,12 @@ func _on_start_game_area_body_entered(body):
 	if body.has_method("player"):
 		playerOnDoor = true
 		$NinePatchRect/game_start_label.visible = true
-		print("Click F to start game.")
 
 
 func _on_start_game_area_body_exited(body):
 	if body.has_method("player"):
 		playerOnDoor = false
 		$NinePatchRect/game_start_label.visible = false
-		print("or not.....")
 
 
 

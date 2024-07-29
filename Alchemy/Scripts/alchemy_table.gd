@@ -12,9 +12,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if 	player_in_table_zone:		
-		if Input.is_action_just_pressed("chat"):
+		if Input.is_action_just_pressed("e"):
 			print("opened alchemy table")
-			$alchemy_ui.start()
+			$CanvasLayer/alchemy_ui.start()
 			is_using = true
 
 
@@ -31,4 +31,4 @@ func _on_area_2d_body_exited(body):
 		player_in_table_zone = false
 		$use_computer_label.visible = false
 		if is_using:
-			$alchemy_ui.close()
+			$CanvasLayer/alchemy_ui.close()

@@ -45,7 +45,7 @@ func _process(delta):
 			MOVE:
 				move(delta)
 	if 	player_in_chat_zone:		
-		if Input.is_action_just_pressed("chat"):
+		if Input.is_action_just_pressed("e"):
 			print("chatting with npc")
 			$Dialogue.start()
 			is_roaming = false

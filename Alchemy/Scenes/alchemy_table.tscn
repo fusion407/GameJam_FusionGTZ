@@ -19,12 +19,6 @@ position = Vector2(-2.38419e-07, 2.38419e-07)
 scale = Vector2(0.0212651, 0.0212651)
 texture = ExtResource("1_itkos")
 
-[node name="alchemy_ui" parent="." instance=ExtResource("3_ej7tb")]
-offset_left = -106.896
-offset_top = -36.0342
-offset_right = 14.1039
-offset_bottom = 47.9658
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -44,7 +38,20 @@ offset_top = -8.27014
 offset_right = 26.288
 offset_bottom = 16.7299
 scale = Vector2(0.351012, 0.351012)
-text = "[F]"
+text = "[E]"
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="alchemy_ui" parent="CanvasLayer" instance=ExtResource("3_ej7tb")]
+anchors_preset = -1
+anchor_right = 0.0312502
+anchor_bottom = 0.0339507
+offset_left = 305.0
+offset_top = 283.0
+offset_right = 426.0
+offset_bottom = 367.0
+scale = Vector2(3.65007, 3.24451)
 metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
