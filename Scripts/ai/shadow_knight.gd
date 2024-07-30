@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # shadow knight variables
-var speed = 50
+var speed = 40
 var health = 300
 var knight_damage = 3
 var dead = false
@@ -16,11 +16,13 @@ var collectable_area = false
 @onready var bone = $bone_collectable
 @onready var orb = $shadow_orb_collectable
 @onready var ring = $ring_collectable
+@onready var stone = $stone_collectable
 
 # item resource variables 
 var boneRes = preload("res://Inventory/items/bone.tres") 
 var orbRes = preload("res://Inventory/items/shadow_orb.tres")
 var ringRes = preload("res://Inventory/items/ring.tres")
+var stoneRes = preload("res://Inventory/items/stone.tres")
 var randNum
 
 func _ready():
@@ -104,11 +106,11 @@ func death():
 	
 	# drop resource, decide drop based on random number
 	if randNum > 95:     # 5% chance to drop ring
-		drop_ring()
+		drop_stone()
 	elif randNum <= 95 && randNum > 75:     # 20% chance to drop orb
-		drop_orb()     
-	elif randNum <= 75 && randNum > 35: # 40% change to drop bone
-		drop_bone()
+		drop_stone()     
+	elif randNum <= 75 && randNum > 0: # 40% change to drop bone
+		drop_stone()
 	# else - 35% no drops for wizard, get rekt
 	
 	# get rid of sprite and disable all hitboxes except collect_area
@@ -131,6 +133,12 @@ func drop_ring():
 	ring.visible = true
 	$shadow_collect_area/CollisionShape2D.disabled = false
 	ring_collect()
+
+func drop_stone():
+	stone.visible = true
+	await get_tree().create_timer(5).timeout
+	queue_free()	
+	
 
 func bone_collect():
 	await get_tree().create_timer(1.5).timeout

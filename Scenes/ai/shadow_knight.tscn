@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dyymqhc74fum5"]
+[gd_scene load_steps=12 format=3 uid="uid://dyymqhc74fum5"]
 
 [ext_resource type="Script" path="res://Scripts/ai/shadow_knight.gd" id="1_f5s15"]
 [ext_resource type="Texture2D" uid="uid://cjirsceq2j7sj" path="res://Art/character/shadow_knight.png" id="2_sybql"]
 [ext_resource type="PackedScene" uid="uid://dltlnagj1fcr" path="res://Scenes/collectables/bone_collectable.tscn" id="3_ug4te"]
 [ext_resource type="PackedScene" uid="uid://cj6qxbn6oudos" path="res://Scenes/collectables/shadow_orb_collectable.tscn" id="4_yxm3n"]
 [ext_resource type="PackedScene" uid="uid://cjtc1aa4kxyom" path="res://Scenes/collectables/ring_collectable.tscn" id="5_kn6ga"]
+[ext_resource type="PackedScene" uid="uid://b1351188ahop4" path="res://Scenes/collectables/stone_collectable.tscn" id="6_vhvrh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tmuih"]
 animations = [{
@@ -66,6 +67,9 @@ visible = false
 visible = false
 
 [node name="ring_collectable" parent="." instance=ExtResource("5_kn6ga")]
+visible = false
+
+[node name="stone_collectable" parent="." instance=ExtResource("6_vhvrh")]
 visible = false
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
