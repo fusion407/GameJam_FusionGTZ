@@ -33,6 +33,7 @@ func _on_craft_button_gui_input(event):
 		
 
 
+
 func _on_alchemy_craftables_slot_ui_1_select_potion(newPot):
 	crafted_potion = newPot
 

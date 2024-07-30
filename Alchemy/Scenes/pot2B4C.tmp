@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Alchemy/Scripts/potion_ui.gd" id="1_5lunj"]
 [ext_resource type="Texture2D" uid="uid://dctvqqkifce1s" path="res://Art/inventory_art/inventory-background.png" id="1_t64b4"]
 [ext_resource type="PackedScene" uid="uid://dvni5q1npouwm" path="res://Alchemy/Scenes/potion_ui_slot.tscn" id="2_q34mg"]
-[ext_resource type="Texture2D" uid="uid://cx8q4kkrywmac" path="res://Art/inventory_art/potions/another_potion.png" id="4_7ejb7"]
+[ext_resource type="Texture2D" uid="uid://dqy43lsd3u5ac" path="res://Art/inventory_art/inventory-slot.png" id="4_10nrk"]
 
 [node name="potion_ui" type="Control"]
 layout_mode = 3
@@ -57,13 +57,11 @@ size_flags_vertical = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="selected_potion_box" type="Panel" parent="CanvasLayer"]
-offset_left = 157.0
-offset_top = 116.0
-offset_right = 197.0
-offset_bottom = 156.0
+[node name="background" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(20.5, 20.5)
+scale = Vector2(2.5625, 2.5625)
+texture = ExtResource("4_10nrk")
 
-[node name="item_display" type="Sprite2D" parent="CanvasLayer/selected_potion_box"]
-position = Vector2(21, 20)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("4_7ejb7")
+[node name="Selector" type="Sprite2D" parent="CanvasLayer"]
+
+[connection signal="itemSignal" from="NinePatchRect/GridContainer/potion_ui_slot1" to="." method="_on_potion_ui_slot_1_item_signal"]

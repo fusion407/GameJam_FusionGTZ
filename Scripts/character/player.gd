@@ -6,8 +6,8 @@ var base_damage = 10
 var player_state
 
 @export var inv: Inv
-@export var pot: Pot
 @onready var healthbar = $Healthbar
+@onready var pot: Pot = preload("res://Alchemy/Potions/potion_inventory.tres")
 
 # once the game has ended, make sure game_has_started, and wand_equipped is set to false
 # by default, game_has_started will eventually be set to false so player has to initiate game start function to use wand
@@ -16,6 +16,7 @@ var game_has_started = false
 var wand_equipped = false
 var wand_cooldown = true
 var projectile = preload("res://Scenes/character/projectile.tscn")
+var currentIndex
 
 var mouse_loc_from_player = null
 
@@ -129,6 +130,7 @@ func collect(item):
 	inv.insert(item)
 	
 	
+
 func craftPotion(potion):
 	pot.insert(potion)
 	
@@ -148,3 +150,17 @@ func death():
 	
 	
 	# hello - corbin
+
+
+func _on_potion_ui_current_pot_index(index):
+	currentIndex = index
+	print(currentIndex)
+
+
+func _on_hotbar_item_signal(item_visual):
+	pass # Replace with function body.
+
+
+func _on_hotbar_ui_current_pot(index):
+	currentIndex = index
+	print(currentIndex)
