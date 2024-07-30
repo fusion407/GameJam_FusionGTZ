@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://5v6o24ngv8pe"]
+[gd_scene load_steps=5 format=3 uid="uid://5v6o24ngv8pe"]
 
 [ext_resource type="Script" path="res://Scripts/Collectables/spider_silk_collectable.gd" id="1_rie0y"]
 [ext_resource type="Texture2D" uid="uid://dgrvompbetuq1" path="res://Art/environment/spider_silk.png" id="2_fvrji"]
+[ext_resource type="Resource" uid="uid://hq1a1kl606ch" path="res://Inventory/items/spider_silk.tres" id="2_yuqco"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v0atj"]
 radius = 23.0
 
 [node name="spider_silk_collectable" type="StaticBody2D"]
 script = ExtResource("1_rie0y")
+item = ExtResource("2_yuqco")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_fvrji")

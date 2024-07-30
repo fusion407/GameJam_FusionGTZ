@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://jai5un104npm"]
+[gd_scene load_steps=21 format=3 uid="uid://jai5un104npm"]
 
 [ext_resource type="Script" path="res://Scripts/levels/Game.gd" id="1_3rbk6"]
 [ext_resource type="Texture2D" uid="uid://cvpi02o6fp5e4" path="res://Art/environment/survivalgame-terrian-defult.png" id="2_hoqn3"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://mk8mgi4k3y8e" path="res://Scenes/character/player.tscn" id="12_ixhgd"]
 [ext_resource type="PackedScene" uid="uid://b1351188ahop4" path="res://Scenes/collectables/stone_collectable.tscn" id="12_m44q2"]
 [ext_resource type="PackedScene" uid="uid://dyymqhc74fum5" path="res://Scenes/ai/shadow_knight.tscn" id="14_ov0ph"]
+[ext_resource type="PackedScene" uid="uid://cr1pr53eaehmf" path="res://Scenes/ai/shadow_fiend.tscn" id="15_cbjh5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4fwde"]
 resource_name = "true"
@@ -749,5 +750,17 @@ position = Vector2(258, 16)
 
 [node name="ShadowKnight4" parent="." instance=ExtResource("14_ov0ph")]
 position = Vector2(215, 51)
+
+[node name="ShadowFiend" parent="." instance=ExtResource("15_cbjh5")]
+position = Vector2(-250, -139)
+
+[node name="ShadowFiend2" parent="." instance=ExtResource("15_cbjh5")]
+position = Vector2(-189, -142)
+
+[node name="ShadowFiend3" parent="." instance=ExtResource("15_cbjh5")]
+position = Vector2(261, -140)
+
+[node name="ShadowFiend4" parent="." instance=ExtResource("15_cbjh5")]
+position = Vector2(200, -143)
 
 [connection signal="timeout" from="game_timer" to="." method="_on_game_timer_timeout"]

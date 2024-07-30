@@ -4,9 +4,9 @@
 extends CharacterBody2D
 
 # shadow knight variables
-var speed = 20
-var health = 250
-var knight_damage = 3
+var speed = 40
+var health = 200
+var fiend_damage = 2
 var dead = false
 
 #detector/collision variables
@@ -15,15 +15,15 @@ var player_in_area = false
 var player = null
 
 # item drop texture variables
-@onready var bone = $bone_collectable
+@onready var silk = $spider_silk_collectable
 @onready var orb = $shadow_orb_collectable
-@onready var ring = $ring_collectable
-@onready var stone = $stone_collectable
+@onready var lighter = $lighter_collectable
 
 var randNum
 
 func _ready():
 	dead = false
+	$AnimatedSprite2D.play("idle")
 
 func _physics_process(delta):
 	if !dead:
@@ -32,12 +32,10 @@ func _physics_process(delta):
 		if player_in_area:
 			var direction = (player.position - position).normalized()
 			position += direction * speed * delta
-			$AnimatedSprite2D.play("idle")     # change to "move" when animation is made
-		else:
-			$AnimatedSprite2D.play("idle")
+			$AnimatedSprite2D.play("mean")     
 			
 		if colliding_with_player and player.isAlive and !dead:
-			deal_damage(knight_damage)	
+			deal_damage(fiend_damage)	
 		
 	if dead:
 		$detection_area/CollisionShape2D.disabled = true
@@ -102,11 +100,11 @@ func death():
 	
 	# drop resource, decide drop based on random number
 	if randNum > 95:     # 5% chance to drop ring
-		dropAndCollect(ring)
+		dropAndCollect(lighter)
 	elif randNum <= 95 && randNum > 75:     # 20% chance to drop orb
 		dropAndCollect(orb)    
 	elif randNum <= 75 && randNum > 35: # 40% change to drop bone
-		dropAndCollect(bone)
+		dropAndCollect(silk)
 	# else - 35% no drops for wizard, get rekt
 	
 	# get rid of sprite and disable all hitboxes except collect_area
