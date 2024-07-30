@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dyymqhc74fum5"]
+[gd_scene load_steps=10 format=3 uid="uid://dyymqhc74fum5"]
 
 [ext_resource type="Script" path="res://Scripts/ai/shadow_knight.gd" id="1_f5s15"]
 [ext_resource type="Texture2D" uid="uid://cjirsceq2j7sj" path="res://Art/character/shadow_knight.png" id="2_sybql"]
 [ext_resource type="PackedScene" uid="uid://dltlnagj1fcr" path="res://Scenes/collectables/bone_collectable.tscn" id="3_ug4te"]
 [ext_resource type="PackedScene" uid="uid://cj6qxbn6oudos" path="res://Scenes/collectables/shadow_orb_collectable.tscn" id="4_yxm3n"]
 [ext_resource type="PackedScene" uid="uid://cjtc1aa4kxyom" path="res://Scenes/collectables/ring_collectable.tscn" id="5_kn6ga"]
-[ext_resource type="PackedScene" uid="uid://b1351188ahop4" path="res://Scenes/collectables/stone_collectable.tscn" id="6_vhvrh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tmuih"]
 animations = [{
@@ -29,9 +28,6 @@ height = 36.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_du3jw"]
 radius = 192.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7blui"]
-radius = 168.012
-
 [node name="ShadowKnight" type="CharacterBody2D"]
 script = ExtResource("1_f5s15")
 
@@ -54,12 +50,6 @@ shape = SubResource("CapsuleShape2D_fbdln")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
 shape = SubResource("CircleShape2D_du3jw")
 
-[node name="shadow_collect_area" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="shadow_collect_area"]
-shape = SubResource("CircleShape2D_7blui")
-disabled = true
-
 [node name="bone_collectable" parent="." instance=ExtResource("3_ug4te")]
 visible = false
 
@@ -69,12 +59,8 @@ visible = false
 [node name="ring_collectable" parent="." instance=ExtResource("5_kn6ga")]
 visible = false
 
-[node name="stone_collectable" parent="." instance=ExtResource("6_vhvrh")]
-visible = false
-
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
-[connection signal="body_entered" from="shadow_collect_area" to="." method="_on_shadow_collect_area_body_entered"]
