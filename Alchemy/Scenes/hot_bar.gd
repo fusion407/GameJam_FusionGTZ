@@ -17,6 +17,3 @@ func update(slot: PotSlot):
 			amount_text.visible = true
 		amount_text.text = str(slot.amount)
 	itemSignal.emit(item_visual)
-
-func potion_ui_slot():
-	pass

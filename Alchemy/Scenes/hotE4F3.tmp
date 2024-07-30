@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhxbf11pxkjal"]
+
+[ext_resource type="Script" path="res://Alchemy/Scenes/hotbar_ui.gd" id="1_o4xu5"]
+[ext_resource type="PackedScene" uid="uid://bao4y3vafdurg" path="res://Alchemy/Scenes/hot_bar.tscn" id="2_83xsa"]
+
+[node name="hotbar_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 48.0
+offset_bottom = 48.0
+script = ExtResource("1_o4xu5")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+
+[node name="hot_bar" parent="NinePatchRect" instance=ExtResource("2_83xsa")]
+layout_mode = 0
