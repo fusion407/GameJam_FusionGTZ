@@ -4,7 +4,7 @@
 extends CharacterBody2D
 
 # shadow knight variables
-var speed = 200
+var speed = 175
 var health = 100
 var ghost_damage = 0.5
 var dead = false
@@ -63,6 +63,7 @@ func _on_hitbox_area_entered(area):
 	if area.has_method("projectile_deal_damage"):
 		damage = 50
 		take_damage(damage)
+		area.visible = false
 	
 # when player is within enemy detection area
 func _on_detection_area_body_entered(body):

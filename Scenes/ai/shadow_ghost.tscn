@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cn23neebowq4r"]
 
-[ext_resource type="Script" path="res://Scenes/ai/shadow_ghost.gd" id="1_e0kl6"]
+[ext_resource type="Script" path="res://Scripts/ai/shadow_ghost.gd" id="1_e0kl6"]
 [ext_resource type="Texture2D" uid="uid://dwyn4vlt2pu3u" path="res://Art/character/shadow_ghost.png" id="1_qdkcg"]
 [ext_resource type="PackedScene" uid="uid://dltlnagj1fcr" path="res://Scenes/collectables/bone_collectable.tscn" id="3_pkqrn"]
 [ext_resource type="PackedScene" uid="uid://cj6qxbn6oudos" path="res://Scenes/collectables/shadow_orb_collectable.tscn" id="4_x66x8"]

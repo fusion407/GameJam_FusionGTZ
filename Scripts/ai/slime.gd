@@ -49,6 +49,8 @@ func _on_hitbox_area_entered(area):
 	if area.has_method("projectile_deal_damage"):
 		damage = 50
 		take_damage(damage)
+		area.visible = false
+		
 		
 
 func _on_hitbox_body_entered(body):
