@@ -11,11 +11,7 @@ var player = null
 var randNum
 
 @onready var slime = $slime_collectable
-@onready var bone = $bone_collectable
-
-# load item res variable
-@export var addBoneInv = preload("res://Inventory/items/bone.tres") 
-@export var itemRes: InvItem
+@onready var lighter = $lighter_collectable
 
 func _ready():
 	dead = false
@@ -36,26 +32,35 @@ func _physics_process(delta):
 		$detection_area/CollisionShape2D.disabled = true
 		$CollisionShape2D.disabled = true
 
-
+# ---------- collision functions ----------
 func _on_detection_area_body_entered(body):
 	if body.has_method("player"):
 		player_in_area = true
 		player = body
-		
-
+	
 
 func _on_detection_area_body_exited(body):
 	if body.has_method("player"):
 		player_in_area = false
 		player = null
 
-
 func _on_hitbox_area_entered(area):
 	var damage
 	if area.has_method("projectile_deal_damage"):
 		damage = 50
 		take_damage(damage)
+		
 
+func _on_hitbox_body_entered(body):
+	if body.has_method("player"):
+		colliding_with_player = true
+
+
+func _on_hitbox_body_exited(body):
+	if body.has_method("player"):
+		colliding_with_player = false
+
+# --------- damage functions -----------
 func take_damage(damage):
 	health = health - damage
 	if health <= 0 and !dead:
@@ -78,52 +83,22 @@ func death():
 	randNum = randi_range(1, 100)
 	
 	# decide drop based on number
-	if randNum > 85:     # 15% chance to drop bone
-		drop_bone()
-	elif randNum <= 85 && randNum >= 35:     # 50% chance to drop slime
-		drop_slime()     
-	# else - 35% no drops for wizard, get rekt
+	if randNum > 95:     # 5% chance to drop rare item
+		dropAndCollect(slime) # add rare item
+	elif randNum <= 95 && randNum > 85:     # 10% chance to drop lighter
+		dropAndCollect(lighter)    
+	elif randNum <= 85 && randNum > 45: # 40% change to drop slime
+		dropAndCollect(slime)
+	# else - 45% no drops for wizard, get rekt
 	$AnimatedSprite2D.visible = false
 	$hitbox/CollisionShape2D.disabled = true
 	$detection_area/CollisionShape2D.disabled = true
 	
 	
-# drop and collection functions
-func drop_slime():
-	slime.visible = true
-	$slime_collect_area/CollisionShape2D.disabled = false
-	slime_collect()
-	
-func drop_bone():
-	bone.visible = true
-	$slime_collect_area/CollisionShape2D.disabled = false
-	bone_collect()
-	
-func slime_collect():
-	await get_tree().create_timer(1.5).timeout
-	slime.visible = false
-	if player: 
-		player.collect(itemRes)
-	queue_free()
-
-func bone_collect():
-	await get_tree().create_timer(1.5).timeout
-	bone.visible = false
-	if player: 
-		player.collect(addBoneInv)
+# ------------ resources: drop and collect function ------------
+func dropAndCollect(item):
+	item.visible = true
+	await get_tree().create_timer(10).timeout
 	queue_free()
 
 
-func _on_slime_collect_area_body_entered(body):
-	if body.has_method("player"):
-		player = body
-
-
-func _on_hitbox_body_entered(body):
-	if body.has_method("player"):
-		colliding_with_player = true
-
-
-func _on_hitbox_body_exited(body):
-	if body.has_method("player"):
-		colliding_with_player = false

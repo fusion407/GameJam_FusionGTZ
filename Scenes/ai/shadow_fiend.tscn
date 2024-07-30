@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://cr1pr53eaehmf"]
+
+[ext_resource type="Script" path="res://Scripts/ai/shadow_fiend.gd" id="1_0g85i"]
+[ext_resource type="Texture2D" uid="uid://dnwxi8bixi0up" path="res://Art/character/shadow_fiend_idle.png" id="2_ow7m5"]
+[ext_resource type="Texture2D" uid="uid://384tq7r3l6dc" path="res://Art/character/shadow_fiend_mean.png" id="3_pa5y5"]
+[ext_resource type="PackedScene" uid="uid://5v6o24ngv8pe" path="res://Scenes/collectables/spider_silk_collectable.tscn" id="4_tlka3"]
+[ext_resource type="PackedScene" uid="uid://cj6qxbn6oudos" path="res://Scenes/collectables/shadow_orb_collectable.tscn" id="5_8t6og"]
+[ext_resource type="PackedScene" uid="uid://dlaulvfxk1dir" path="res://Scenes/collectables/lighter_collectable.tscn" id="6_ybhmk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rcvwr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ow7m5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pa5y5")
+}],
+"loop": true,
+"name": &"mean",
+"speed": 1.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3bi7l"]
+radius = 23.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4pbii"]
+radius = 22.0227
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jwxln"]
+radius = 169.027
+
+[node name="ShadowFiend" type="CharacterBody2D"]
+script = ExtResource("1_0g85i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rcvwr")
+animation = &"mean"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3bi7l")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("CircleShape2D_4pbii")
+
+[node name="detection_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+shape = SubResource("CircleShape2D_jwxln")
+
+[node name="spider_silk_collectable" parent="." instance=ExtResource("4_tlka3")]
+visible = false
+
+[node name="shadow_orb_collectable" parent="." instance=ExtResource("5_8t6og")]
+visible = false
+
+[node name="lighter_collectable" parent="." instance=ExtResource("6_ybhmk")]
+visible = false
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
