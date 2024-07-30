@@ -4,9 +4,9 @@
 extends CharacterBody2D
 
 # shadow knight variables
-var speed = 40
-var health = 200
-var fiend_damage = 2
+var speed = 50
+var health = 150
+var fiend_damage = 1.5
 var dead = false
 
 #detector/collision variables
@@ -91,7 +91,6 @@ func death():
 	dead = true
 	# todo - add death animation
 	# $AnimatedSprite2D.play("death")
-	await get_tree().create_timer(1).timeout
 	
 	
 	# get random number

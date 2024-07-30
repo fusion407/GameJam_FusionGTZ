@@ -11,7 +11,7 @@ var player = null
 var randNum
 
 @onready var slime = $slime_collectable
-@onready var bone = $bone_collectable
+@onready var lighter = $lighter_collectable
 
 func _ready():
 	dead = false
@@ -83,11 +83,13 @@ func death():
 	randNum = randi_range(1, 100)
 	
 	# decide drop based on number
-	if randNum > 85:     # 15% chance to drop bone
+	if randNum > 95:     # 5% chance to drop rare item
+		dropAndCollect(slime) # add rare item
+	elif randNum <= 95 && randNum > 85:     # 10% chance to drop lighter
+		dropAndCollect(lighter)    
+	elif randNum <= 85 && randNum > 45: # 40% change to drop slime
 		dropAndCollect(slime)
-	elif randNum <= 85 && randNum >= 35:     # 50% chance to drop slime
-		dropAndCollect(slime)    
-	# else - 35% no drops for wizard, get rekt
+	# else - 45% no drops for wizard, get rekt
 	$AnimatedSprite2D.visible = false
 	$hitbox/CollisionShape2D.disabled = true
 	$detection_area/CollisionShape2D.disabled = true

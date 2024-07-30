@@ -1,12 +1,12 @@
-# shadow_knigh.gd
+# shadow_fiend.gd
 # controls shadow fiend enemy logic
 
 extends CharacterBody2D
 
 # shadow knight variables
-var speed = 20
-var health = 250
-var knight_damage = 2.5
+var speed = 200
+var health = 100
+var ghost_damage = 0.5
 var dead = false
 
 #detector/collision variables
@@ -36,7 +36,7 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("idle")
 			
 		if colliding_with_player and player.isAlive and !dead:
-			deal_damage(knight_damage)	
+			deal_damage(ghost_damage)	
 		
 	if dead:
 		$detection_area/CollisionShape2D.disabled = true
@@ -92,7 +92,6 @@ func death():
 	dead = true
 	# todo - add death animation
 	# $AnimatedSprite2D.play("death")
-
 	
 	
 	# get random number
