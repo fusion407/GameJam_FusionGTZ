@@ -459,3 +459,5 @@ offset_left = -192.0
 offset_top = -108.0
 offset_right = -112.0
 offset_bottom = -93.0
+
+[connection signal="drinkPotion" from="potion_ui" to="." method="_on_potion_ui_drink_potion"]
