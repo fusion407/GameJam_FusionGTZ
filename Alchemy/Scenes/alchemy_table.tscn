@@ -16,7 +16,6 @@ scale = Vector2(1.74936, 1.69284)
 script = ExtResource("1_sfmwd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1, 1)
 texture = ExtResource("2_ub11p")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
