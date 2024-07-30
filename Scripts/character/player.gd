@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 var speed = 100
 var health = 100
@@ -7,7 +8,7 @@ var player_state
 
 @export var inv: Inv
 @onready var healthbar = $Healthbar
-@onready var pot: Pot = preload("res://Alchemy/Potions/potion_inventory.tres")
+@onready var pot: Pot = load("res://Alchemy/Potions/potion_inventory.tres")
 
 # once the game has ended, make sure game_has_started, and wand_equipped is set to false
 # by default, game_has_started will eventually be set to false so player has to initiate game start function to use wand
@@ -31,6 +32,7 @@ func _set_health(value):
 		death()
 	
 	healthbar.health = health
+	print(health)
 
 func _physics_process(delta):
 	mouse_loc_from_player = get_global_mouse_position() - self.position
@@ -129,11 +131,28 @@ func player():
 func collect(item):
 	inv.insert(item)
 	
+func drink_potion(name, index):
+	print("drinks: ")
+	match name:
+		"Potion of Healing":
+			print("potion of healing")
+			potion_of_healing_effect()
+		"Potion of Speed":
+			print("potion of Speed")
+			
+	$potion_ui.remove_potion(name, index)
+
 	
 
 func craftPotion(potion):
 	pot.insert(potion)
 	
+func potion_of_healing_effect():
+	var new_health = health + 10
+	if health >= 100:
+		_set_health(100)
+	else:
+		_set_health(new_health)	
 
 func death():
 	isAlive = false
@@ -157,10 +176,8 @@ func _on_potion_ui_current_pot_index(index):
 	print(currentIndex)
 
 
-func _on_hotbar_item_signal(item_visual):
-	pass # Replace with function body.
-
-
-func _on_hotbar_ui_current_pot(index):
-	currentIndex = index
-	print(currentIndex)
+func _on_potion_ui_drink_potion(potion, index):
+	print("signal worked:")
+	drink_potion(potion.name, index)
+	
+	
