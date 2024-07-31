@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://l5gdu70e2x4s"]
+
+[ext_resource type="Script" path="res://Scripts/Interactables/start_door.gd" id="1_s08pp"]
+[ext_resource type="Texture2D" uid="uid://o6l0huebypo3" path="res://Art/environment/door.png" id="2_fob3l"]
+[ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/ui/fade_transition.tscn" id="3_8usa1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w84p0"]
+size = Vector2(99.9998, 26.7857)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ny1km"]
+size = Vector2(53.3333, 41.6666)
+
+[node name="start_door" type="Node2D"]
+scale = Vector2(0.600001, 0.560001)
+script = ExtResource("1_s08pp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8.92856)
+texture = ExtResource("2_fob3l")
+
+[node name="start_game_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="start_game_area"]
+position = Vector2(-1.66666, 20.5357)
+shape = SubResource("RectangleShape2D_w84p0")
+
+[node name="door_collision" type="StaticBody2D" parent="."]
+scale = Vector2(1, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_collision"]
+position = Vector2(7.94727e-07, -5.35713)
+shape = SubResource("RectangleShape2D_ny1km")
+
+[node name="Fade_transition" parent="." instance=ExtResource("3_8usa1")]
+offset_left = -13025.0
+offset_top = 6049.99
+offset_right = -11871.0
+offset_bottom = 6698.99
+mouse_filter = 2
+
+[node name="fade_timer" type="Timer" parent="Fade_transition"]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = -20.0
+offset_top = -64.2857
+offset_right = 20.0
+offset_bottom = -24.2857
+
+[node name="game_start_label" type="RichTextLabel" parent="NinePatchRect"]
+visible = false
+layout_mode = 0
+offset_left = -30.0
+offset_top = 25.0
+offset_right = 197.0
+offset_bottom = 61.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/normal_font_size = 20
+text = "Click 'E' to start game."
+
+[connection signal="body_entered" from="start_game_area" to="." method="_on_start_game_area_body_entered"]
+[connection signal="body_exited" from="start_game_area" to="." method="_on_start_game_area_body_exited"]
+[connection signal="timeout" from="Fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]

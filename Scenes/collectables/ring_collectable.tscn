@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjtc1aa4kxyom"]
+
+[ext_resource type="Script" path="res://Scripts/Collectables/ring_collectable.gd" id="1_aawab"]
+[ext_resource type="Texture2D" uid="uid://cd3jku4vlg8bx" path="res://Art/environment/ring.png" id="1_ur3dd"]
+[ext_resource type="Resource" uid="uid://bmj8fxstet6u" path="res://Inventory/items/ring.tres" id="2_3uk48"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ev82e"]
+radius = 21.0238
+
+[node name="ring_collectable" type="StaticBody2D"]
+script = ExtResource("1_aawab")
+item = ExtResource("2_3uk48")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ur3dd")
+
+[node name="interactable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
+shape = SubResource("CircleShape2D_ev82e")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

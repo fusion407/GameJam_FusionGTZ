@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotItem" load_steps=3 format=3 uid="uid://b0ngwkkmqk426"]
+
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_item.gd" id="1_8xwif"]
+[ext_resource type="Texture2D" uid="uid://bby74pnowy5nv" path="res://Art/inventory_art/potions/shadow_potion.png" id="2_ec0br"]
+
+[resource]
+script = ExtResource("1_8xwif")
+name = "Potion of Shadows"
+texture = ExtResource("2_ec0br")

@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwdogjp6qja5d"]
+
+[ext_resource type="Script" path="res://Alchemy/Scripts/alchemy_table.gd" id="1_sfmwd"]
+[ext_resource type="Texture2D" uid="uid://bj7fluxuuplta" path="res://Art/environment/alchemy_table.png" id="2_ub11p"]
+[ext_resource type="PackedScene" uid="uid://br0rqlfh5ypc6" path="res://Alchemy/Scenes/alchemy_ui.tscn" id="3_ej7tb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34138"]
+size = Vector2(12, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w70ce"]
+size = Vector2(22, 13)
+
+[node name="alchemy_table" type="Node2D"]
+y_sort_enabled = true
+scale = Vector2(1.74936, 1.69284)
+script = ExtResource("1_sfmwd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ub11p")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_34138")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 4.76837e-07)
+scale = Vector2(1.16006, 1.94516)
+shape = SubResource("RectangleShape2D_w70ce")
+
+[node name="use_computer_label" type="Label" parent="."]
+visible = false
+z_index = 1
+y_sort_enabled = true
+offset_left = 5.71638
+offset_top = -20.6753
+offset_right = 25.7164
+offset_bottom = 4.32472
+scale = Vector2(0.351012, 0.351012)
+text = "[E]"
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="alchemy_ui" parent="CanvasLayer" instance=ExtResource("3_ej7tb")]
+anchors_preset = -1
+anchor_right = 0.0312502
+anchor_bottom = 0.0339507
+offset_left = 305.0
+offset_top = 283.0
+offset_right = 426.0
+offset_bottom = 367.0
+scale = Vector2(3.65007, 3.24451)
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

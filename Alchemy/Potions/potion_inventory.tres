@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Pot" load_steps=7 format=3 uid="uid://cfex3dobweq1j"]
+
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion.gd" id="1_m5qso"]
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_slot.gd" id="4_gwvj6"]
+
+[sub_resource type="Resource" id="Resource_rd8ns"]
+script = ExtResource("4_gwvj6")
+amount = 0
+required_materials = Array[Resource("res://Inventory/scripts/inventory_item.gd")]([])
+
+[sub_resource type="Resource" id="Resource_mi4n5"]
+script = ExtResource("4_gwvj6")
+amount = 0
+required_materials = Array[Resource("res://Inventory/scripts/inventory_item.gd")]([])
+
+[sub_resource type="Resource" id="Resource_tklq5"]
+script = ExtResource("4_gwvj6")
+amount = 0
+required_materials = Array[Resource("res://Inventory/scripts/inventory_item.gd")]([])
+
+[sub_resource type="Resource" id="Resource_cgfny"]
+script = ExtResource("4_gwvj6")
+amount = 0
+required_materials = Array[Resource("res://Inventory/scripts/inventory_item.gd")]([])
+
+[resource]
+script = ExtResource("1_m5qso")
+slots = Array[ExtResource("4_gwvj6")]([SubResource("Resource_rd8ns"), SubResource("Resource_mi4n5"), SubResource("Resource_tklq5"), SubResource("Resource_cgfny")])

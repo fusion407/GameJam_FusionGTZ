@@ -1,0 +1,97 @@
+[gd_scene load_steps=12 format=3 uid="uid://cn23neebowq4r"]
+
+[ext_resource type="Script" path="res://Scripts/ai/shadow_ghost.gd" id="1_e0kl6"]
+[ext_resource type="Texture2D" uid="uid://dwyn4vlt2pu3u" path="res://Art/character/shadow_ghost.png" id="1_qdkcg"]
+[ext_resource type="PackedScene" uid="uid://dltlnagj1fcr" path="res://Scenes/collectables/bone_collectable.tscn" id="3_pkqrn"]
+[ext_resource type="PackedScene" uid="uid://cj6qxbn6oudos" path="res://Scenes/collectables/shadow_orb_collectable.tscn" id="4_x66x8"]
+[ext_resource type="PackedScene" uid="uid://cjtc1aa4kxyom" path="res://Scenes/collectables/ring_collectable.tscn" id="5_76uhi"]
+[ext_resource type="PackedScene" uid="uid://cgumsabfxhisk" path="res://healthbar/healthbar.tscn" id="6_xr6pk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_28hld"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qdkcg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u70da"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpndk"]
+radius = 17.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ic726"]
+radius = 121.037
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0vo1x"]
+
+[node name="ShadowGhost" type="CharacterBody2D"]
+script = ExtResource("1_e0kl6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_28hld")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_u70da")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("CircleShape2D_jpndk")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="detection_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+shape = SubResource("CircleShape2D_ic726")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="bone_collectable" parent="." instance=ExtResource("3_pkqrn")]
+visible = false
+collision_layer = 0
+collision_mask = 0
+
+[node name="shadow_orb_collectable" parent="." instance=ExtResource("4_x66x8")]
+visible = false
+collision_layer = 0
+collision_mask = 0
+
+[node name="ring_collectable" parent="." instance=ExtResource("5_76uhi")]
+visible = false
+collision_layer = 0
+collision_mask = 0
+
+[node name="find_player_area" type="Area2D" parent="."]
+scale = Vector2(26.36, 26.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="find_player_area"]
+scale = Vector2(1.72, 1.72)
+shape = SubResource("CircleShape2D_0vo1x")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Slow_timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Shock_timer" type="Timer" parent="."]
+
+[node name="Healthbar" parent="." instance=ExtResource("6_xr6pk")]
+offset_left = -11.0
+offset_top = -23.0
+offset_right = 69.0
+offset_bottom = -8.0
+scale = Vector2(0.28, 0.28)
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="find_player_area" to="." method="_on_find_player_area_body_entered"]
+[connection signal="timeout" from="Slow_timer" to="." method="_on_slow_timer_timeout"]
+[connection signal="timeout" from="Shock_timer" to="." method="_on_shock_timer_timeout"]

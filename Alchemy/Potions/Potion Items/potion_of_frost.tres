@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotItem" load_steps=3 format=3 uid="uid://v8hq833vqbtc"]
+
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_item.gd" id="1_lx2a6"]
+[ext_resource type="Texture2D" uid="uid://bbhuxwoog21ks" path="res://Art/inventory_art/potions/snow_potion.png" id="2_i3c0n"]
+
+[resource]
+script = ExtResource("1_lx2a6")
+name = "Potion of Frost"
+texture = ExtResource("2_i3c0n")

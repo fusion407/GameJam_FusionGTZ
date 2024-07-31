@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotItem" load_steps=3 format=3 uid="uid://tamiik46uhb8"]
+
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_item.gd" id="1_i87vq"]
+[ext_resource type="Texture2D" uid="uid://c1h607llk8tm1" path="res://Art/inventory_art/potions/pink_potion.png" id="2_ubm6k"]
+
+[resource]
+script = ExtResource("1_i87vq")
+name = "Potion of Love"
+texture = ExtResource("2_ubm6k")

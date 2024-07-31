@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PotSlot" load_steps=3 format=3 uid="uid://b4syx3gx2vjb6"]
+
+[ext_resource type="Resource" uid="uid://pv81oat4m7ec" path="res://Alchemy/Potions/Potion Items/potion_of_speed.tres" id="1_o8f36"]
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_slot.gd" id="2_cfknq"]
+
+[resource]
+script = ExtResource("2_cfknq")
+pot = ExtResource("1_o8f36")

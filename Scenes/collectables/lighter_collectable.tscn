@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlaulvfxk1dir"]
+
+[ext_resource type="Script" path="res://Scripts/Collectables/lighter_collectable.gd" id="1_gjl78"]
+[ext_resource type="Resource" uid="uid://dho1hfq8a10c7" path="res://Inventory/items/lighter.tres" id="2_gcfty"]
+[ext_resource type="Texture2D" uid="uid://dcchrajhp3l0k" path="res://Art/environment/lighter.png" id="3_33bgg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ru2m1"]
+radius = 14.0
+
+[node name="lighter_collectable" type="StaticBody2D"]
+script = ExtResource("1_gjl78")
+item = ExtResource("2_gcfty")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_33bgg")
+
+[node name="interactable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
+shape = SubResource("CircleShape2D_ru2m1")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

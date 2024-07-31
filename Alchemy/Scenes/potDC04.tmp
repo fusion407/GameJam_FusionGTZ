@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://na72ea5iti5o"]
+
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_ui.gd" id="1_5lunj"]
+[ext_resource type="Texture2D" uid="uid://dctvqqkifce1s" path="res://Art/inventory_art/inventory-background.png" id="1_t64b4"]
+[ext_resource type="PackedScene" uid="uid://dvni5q1npouwm" path="res://Alchemy/Scenes/potion_ui_slot.tscn" id="2_q34mg"]
+[ext_resource type="Texture2D" uid="uid://dqy43lsd3u5ac" path="res://Art/inventory_art/inventory-slot.png" id="4_10nrk"]
+[ext_resource type="Texture2D" uid="uid://cikp0xfyb16k" path="res://Art/environment/potion.png" id="5_fesxp"]
+
+[node name="potion_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 27.0
+offset_bottom = 88.0
+script = ExtResource("1_5lunj")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 27.0
+offset_bottom = 88.0
+texture = ExtResource("1_t64b4")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -6.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+
+[node name="potion_ui_slot1" parent="NinePatchRect/GridContainer" instance=ExtResource("2_q34mg")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="potion_ui_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("2_q34mg")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="potion_ui_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("2_q34mg")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="potion_ui_slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("2_q34mg")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="background" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(20.5, 20.5)
+scale = Vector2(2.5625, 2.5625)
+texture = ExtResource("4_10nrk")
+
+[node name="Selector" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(20, 19)
+texture = ExtResource("5_fesxp")
+
+[connection signal="itemSignal" from="NinePatchRect/GridContainer/potion_ui_slot1" to="." method="_on_potion_ui_slot_1_item_signal"]
+[connection signal="itemSignal" from="NinePatchRect/GridContainer/potion_ui_slot2" to="." method="_on_potion_ui_slot_2_item_signal"]

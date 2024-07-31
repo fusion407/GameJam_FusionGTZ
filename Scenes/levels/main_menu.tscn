@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://vs6dng2sm34i"]
+
+[ext_resource type="Script" path="res://Scripts/levels/main_menu.gd" id="1_4dcuw"]
+[ext_resource type="Texture2D" uid="uid://cikp0xfyb16k" path="res://Art/environment/potion.png" id="2_t5em3"]
+[ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/ui/fade_transition.tscn" id="3_jvrjd"]
+[ext_resource type="Texture2D" uid="uid://bbhhok02xr3n1" path="res://Art/environment/potion_blue.png" id="4_jtc4n"]
+
+[node name="main_menu" type="Node2D"]
+script = ExtResource("1_4dcuw")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Node2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.88, 16.56)
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Potion" type="Sprite2D" parent="."]
+position = Vector2(189, 332)
+scale = Vector2(51.8333, 51.8333)
+texture = ExtResource("2_t5em3")
+
+[node name="PotionBlue" type="Sprite2D" parent="."]
+position = Vector2(938, 389)
+scale = Vector2(33.1667, 33.1667)
+texture = ExtResource("4_jtc4n")
+
+[node name="button_manager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="button_manager"]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 258.0
+offset_right = 577.0
+offset_bottom = 289.0
+text = "Start"
+
+[node name="Options" type="Button" parent="button_manager"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 296.0
+offset_right = 590.0
+offset_bottom = 327.0
+text = "Options
+"
+
+[node name="Quit" type="Button" parent="button_manager"]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 333.0
+offset_right = 575.0
+offset_bottom = 364.0
+text = "Quit
+"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 127.0
+offset_right = 769.0
+offset_bottom = 197.0
+scale = Vector2(1.415, 1.415)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 48
+text = "Spells & Potions Inc."
+
+[node name="Fade_transition" parent="." instance=ExtResource("3_jvrjd")]
+visible = false
+mouse_filter = 2
+
+[node name="fade_timer" type="Timer" parent="Fade_transition"]
+
+[connection signal="pressed" from="button_manager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="button_manager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="button_manager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="Fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]

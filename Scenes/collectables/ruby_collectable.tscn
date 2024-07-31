@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnu1llud77elp"]
+
+[ext_resource type="Script" path="res://Scripts/Collectables/ruby_collectable.gd" id="1_u0iwm"]
+[ext_resource type="Resource" uid="uid://by4d8ihffmkrq" path="res://Inventory/items/ruby.tres" id="2_u00lv"]
+[ext_resource type="Texture2D" uid="uid://1i34nh01jv1r" path="res://Art/environment/ruby.png" id="3_e30hl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v0atj"]
+radius = 23.0
+
+[node name="ruby_collectable" type="StaticBody2D"]
+script = ExtResource("1_u0iwm")
+item = ExtResource("2_u00lv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_e30hl")
+
+[node name="interactable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
+shape = SubResource("CircleShape2D_v0atj")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

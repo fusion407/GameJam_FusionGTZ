@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotSlot" load_steps=3 format=3 uid="uid://c4dujpajoodxg"]
+
+[ext_resource type="Resource" uid="uid://v8hq833vqbtc" path="res://Alchemy/Potions/Potion Items/potion_of_frost.tres" id="1_rge7t"]
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_slot.gd" id="2_f21d3"]
+
+[resource]
+script = ExtResource("2_f21d3")
+pot = ExtResource("1_rge7t")
+amount = 0
