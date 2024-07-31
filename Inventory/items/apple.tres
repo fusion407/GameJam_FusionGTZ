@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("1_kpomf")
-name = "apple"
+name = "Apple"
 texture = ExtResource("2_iefe0")

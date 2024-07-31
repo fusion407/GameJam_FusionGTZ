@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("1_2kov7")
-name = "shadow_orb"
+name = "Shadow Orb"
 texture = ExtResource("2_4bpgu")

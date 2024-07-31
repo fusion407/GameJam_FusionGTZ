@@ -1,8 +1,12 @@
-[gd_resource type="Resource" script_class="PotSlot" load_steps=3 format=3 uid="uid://xunxdquqntoa"]
+[gd_resource type="Resource" script_class="PotSlot" load_steps=5 format=3 uid="uid://xunxdquqntoa"]
 
 [ext_resource type="Resource" uid="uid://lxgxqvl37xgx" path="res://Alchemy/Potions/Potion Items/potion_of_healing.tres" id="1_rchkp"]
 [ext_resource type="Script" path="res://Alchemy/Scripts/potion_slot.gd" id="2_du0ko"]
+[ext_resource type="Resource" uid="uid://cgvkjk135otr7" path="res://Inventory/items/apple.tres" id="2_j7i76"]
+[ext_resource type="Resource" uid="uid://vv1p6mfgn5wu" path="res://Inventory/items/stick.tres" id="3_pj55n"]
 
 [resource]
 script = ExtResource("2_du0ko")
 pot = ExtResource("1_rchkp")
+amount = 0
+required_materials = Array[Resource("res://Inventory/scripts/inventory_item.gd")]([ExtResource("2_j7i76"), ExtResource("3_pj55n")])

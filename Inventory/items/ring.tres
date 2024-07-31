@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("1_5jn25")
-name = "ring"
+name = "Ring"
 texture = ExtResource("2_0vfoe")
