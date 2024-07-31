@@ -12,6 +12,7 @@ var randNum
 
 @onready var slime = $slime_collectable
 @onready var lighter = $lighter_collectable
+@onready var ruby = $ruby_collectable
 
 func _ready():
 	dead = false
@@ -86,7 +87,7 @@ func death():
 	
 	# decide drop based on number
 	if randNum > 95:     # 5% chance to drop rare item
-		dropAndCollect(slime) # add rare item
+		dropAndCollect(ruby) # add rare item
 	elif randNum <= 95 && randNum > 85:     # 10% chance to drop lighter
 		dropAndCollect(lighter)    
 	elif randNum <= 85 && randNum > 45: # 40% change to drop slime

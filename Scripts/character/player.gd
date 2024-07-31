@@ -69,6 +69,7 @@ func _physics_process(delta):
 		projectile_instance.rotation = $Marker2D.rotation
 		projectile_instance.global_position = $Marker2D.global_position
 		add_child(projectile_instance)
+		$projectileAudio.play()
 		
 		# plays attack animation when left mouse click is used not working very well, attack animation can be low priority
 		# play_attack_anim(mouse_loc_from_player)

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dwyn4vlt2pu3u" path="res://Art/character/shadow_ghost.png" id="1_qdkcg"]
 [ext_resource type="PackedScene" uid="uid://dltlnagj1fcr" path="res://Scenes/collectables/bone_collectable.tscn" id="3_pkqrn"]
 [ext_resource type="PackedScene" uid="uid://cj6qxbn6oudos" path="res://Scenes/collectables/shadow_orb_collectable.tscn" id="4_x66x8"]
-[ext_resource type="PackedScene" uid="uid://cjtc1aa4kxyom" path="res://Scenes/collectables/ring_collectable.tscn" id="5_76uhi"]
+[ext_resource type="PackedScene" uid="uid://cv7igenp3e4ui" path="res://Scenes/collectables/goblet_collectable.tscn" id="5_18mbm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_28hld"]
 animations = [{
@@ -56,10 +56,8 @@ visible = false
 collision_layer = 0
 collision_mask = 0
 
-[node name="ring_collectable" parent="." instance=ExtResource("5_76uhi")]
+[node name="goblet_collectable" parent="." instance=ExtResource("5_18mbm")]
 visible = false
-collision_layer = 0
-collision_mask = 0
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

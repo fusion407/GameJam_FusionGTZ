@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://mk8mgi4k3y8e"]
+[gd_scene load_steps=53 format=3 uid="uid://mk8mgi4k3y8e"]
 
 [ext_resource type="Texture2D" uid="uid://b71irqvvob440" path="res://Art/character/survivalgame-player-green.png" id="1_15g3b"]
 [ext_resource type="Resource" uid="uid://ofyync6tt6g0" path="res://Inventory/player_inventory.tres" id="2_foq33"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://btlj57wlq6d6m" path="res://Inventory/scenes/inventory_ui.tscn" id="4_idabu"]
 [ext_resource type="PackedScene" uid="uid://cgumsabfxhisk" path="res://healthbar/healthbar.tscn" id="6_1l2of"]
 [ext_resource type="PackedScene" uid="uid://na72ea5iti5o" path="res://Alchemy/Scenes/potion_ui.tscn" id="7_2fk8u"]
+[ext_resource type="AudioStream" uid="uid://w76q84hhbrsd" path="res://Audio/Basic Fire.wav" id="8_8mltq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l4gsh"]
 atlas = ExtResource("4_3smko")
@@ -462,6 +463,10 @@ offset_bottom = -93.0
 
 [node name="Speed_timer" type="Timer" parent="."]
 wait_time = 10.0
+
+[node name="projectileAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_8mltq")
+volume_db = -14.054
 
 [connection signal="drinkPotion" from="potion_ui" to="." method="_on_potion_ui_drink_potion"]
 [connection signal="timeout" from="Speed_timer" to="." method="_on_speed_timer_timeout"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://dovwaqnf20rb5"]
+[gd_scene load_steps=28 format=3 uid="uid://dovwaqnf20rb5"]
 
 [ext_resource type="Texture2D" uid="uid://b83ssuu0ktyd8" path="res://Art/character/survivalgame-enemy-slime.png" id="1_fwice"]
 [ext_resource type="Script" path="res://Scripts/ai/slime.gd" id="1_m2yhv"]
 [ext_resource type="PackedScene" uid="uid://bd7t48nvcjom2" path="res://Scenes/collectables/slime_collectable.tscn" id="3_42oqm"]
 [ext_resource type="PackedScene" uid="uid://dlaulvfxk1dir" path="res://Scenes/collectables/lighter_collectable.tscn" id="4_u7rcr"]
+[ext_resource type="PackedScene" uid="uid://cnu1llud77elp" path="res://Scenes/collectables/ruby_collectable.tscn" id="5_wlb7k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_747lh"]
 atlas = ExtResource("1_fwice")
@@ -187,6 +188,9 @@ collision_mask = 0
 visible = false
 collision_layer = 0
 collision_mask = 0
+
+[node name="ruby_collectable" parent="." instance=ExtResource("5_wlb7k")]
+visible = false
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
