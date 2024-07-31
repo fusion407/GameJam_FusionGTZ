@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotSlot" load_steps=3 format=3 uid="uid://dqoxh4bd3ubf0"]
+
+[ext_resource type="Resource" uid="uid://dnhepqny48w5q" path="res://Alchemy/Potions/Potion Items/potion_of_burst.tres" id="1_18bid"]
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_slot.gd" id="2_gc4ey"]
+
+[resource]
+script = ExtResource("2_gc4ey")
+pot = ExtResource("1_18bid")
+amount = 0

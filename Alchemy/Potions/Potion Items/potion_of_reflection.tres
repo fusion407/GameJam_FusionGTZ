@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotItem" load_steps=3 format=3 uid="uid://dkb2xoofgkihx"]
+
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_item.gd" id="1_54n1l"]
+[ext_resource type="Texture2D" uid="uid://dgllg27us3y0x" path="res://Art/inventory_art/potions/green_potion.png" id="2_tpx4x"]
+
+[resource]
+script = ExtResource("1_54n1l")
+name = "Potion of Reflection"
+texture = ExtResource("2_tpx4x")

@@ -139,6 +139,37 @@ func drink_potion(name, index):
 			potion_of_healing_effect()
 		"Potion of Speed":
 			print("potion of Speed")
+			potion_of_speed_effect()
+		"Potion of Protection":
+			print("potion of Protection")
+			potion_of_protection_effect()
+		"Potion of Reflection":
+			print("potion of Reflection")
+			potion_of_reflection_effect()
+		"Potion of Burst":
+			print("potion of Burst")
+			potion_of_burst_effect()
+		"Potion of Spread":
+			print("potion of Spread")
+			potion_of_spread_effect()
+		"Potion of Fire":
+			print("potion of Fire")
+			potion_of_fire_effect()
+		"Potion of Frost":
+			print("potion of Frost")
+			potion_of_frost_effect()
+		"Potion of Shock":
+			print("potion of Shock")
+			potion_of_shock_effect()
+		"Potion of Love":
+			print("potion of Love")
+			potion_of_love_effect()
+		"Potion of Luck":
+			print("potion of Luck")
+			potion_of_luck_effect()
+		"Potion of Shadows":
+			print("Potion of Shadows")
+			potion_of_shadows_effect()
 			
 	$potion_ui.remove_potion(name, index)
 
@@ -153,6 +184,40 @@ func potion_of_healing_effect():
 		_set_health(100)
 	else:
 		_set_health(new_health)	
+
+func potion_of_speed_effect():
+	speed = 400
+	$Speed_timer.start(10)
+
+func potion_of_protection_effect():
+	print("works fine")
+	
+func potion_of_reflection_effect():
+	print("works fine")
+
+func potion_of_burst_effect():
+	print("works fine")
+	
+func potion_of_spread_effect():
+	print("works fine")
+
+func potion_of_fire_effect():
+	print("works fine")
+
+func potion_of_frost_effect():
+	print("works fine")
+	
+func potion_of_shock_effect():
+	print("works fine")
+	
+func potion_of_love_effect():
+	print("works fine")
+	
+func potion_of_luck_effect():
+	print("works fine")
+	
+func potion_of_shadows_effect():
+	print("works fine")
 
 func death():
 	isAlive = false
@@ -177,7 +242,8 @@ func _on_potion_ui_current_pot_index(index):
 
 
 func _on_potion_ui_drink_potion(potion, index):
-	print("signal worked:")
 	drink_potion(potion.name, index)
 	
-	
+
+func _on_speed_timer_timeout():
+	speed = 100

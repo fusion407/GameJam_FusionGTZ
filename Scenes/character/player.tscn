@@ -460,4 +460,8 @@ offset_top = -108.0
 offset_right = -112.0
 offset_bottom = -93.0
 
+[node name="Speed_timer" type="Timer" parent="."]
+wait_time = 10.0
+
 [connection signal="drinkPotion" from="potion_ui" to="." method="_on_potion_ui_drink_potion"]
+[connection signal="timeout" from="Speed_timer" to="." method="_on_speed_timer_timeout"]

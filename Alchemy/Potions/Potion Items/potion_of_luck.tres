@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotItem" load_steps=3 format=3 uid="uid://tll75r8ga4cr"]
+
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_item.gd" id="1_r700b"]
+[ext_resource type="Texture2D" uid="uid://bsguyxf2smodi" path="res://Art/inventory_art/potions/small_potion.png" id="2_mjs5c"]
+
+[resource]
+script = ExtResource("1_r700b")
+name = "Potion of Luck"
+texture = ExtResource("2_mjs5c")
