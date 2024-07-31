@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotItem" load_steps=3 format=3 uid="uid://dnhepqny48w5q"]
+
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_item.gd" id="1_5so4j"]
+[ext_resource type="Texture2D" uid="uid://qlfa5epf487f" path="res://Art/inventory_art/potions/milk_potion.png" id="2_u544i"]
+
+[resource]
+script = ExtResource("1_5so4j")
+name = "Potion of Burst"
+texture = ExtResource("2_u544i")

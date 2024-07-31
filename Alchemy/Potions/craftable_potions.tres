@@ -1,50 +1,19 @@
-[gd_resource type="Resource" script_class="Pot" load_steps=15 format=3 uid="uid://4akfi1v1njmj"]
+[gd_resource type="Resource" script_class="Pot" load_steps=14 format=3 uid="uid://4akfi1v1njmj"]
 
 [ext_resource type="Script" path="res://Alchemy/Scripts/potion.gd" id="1_iglrc"]
 [ext_resource type="Resource" uid="uid://xunxdquqntoa" path="res://Alchemy/Potions/Potion Slots/potion_of_healing_slot.tres" id="2_as763"]
 [ext_resource type="Resource" uid="uid://b4syx3gx2vjb6" path="res://Alchemy/Potions/Potion Slots/potion_of_speed_slot.tres" id="3_5sx2g"]
-[ext_resource type="Script" path="res://Alchemy/Scripts/potion_slot.gd" id="3_gjxwx"]
-
-[sub_resource type="Resource" id="Resource_avb53"]
-script = ExtResource("3_gjxwx")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_u8lnh"]
-script = ExtResource("3_gjxwx")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_08nyo"]
-script = ExtResource("3_gjxwx")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_0hugf"]
-script = ExtResource("3_gjxwx")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_wxtpy"]
-script = ExtResource("3_gjxwx")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_10mo0"]
-script = ExtResource("3_gjxwx")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_lqx53"]
-script = ExtResource("3_gjxwx")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_ihbxi"]
-script = ExtResource("3_gjxwx")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_bef44"]
-script = ExtResource("3_gjxwx")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_esj1g"]
-script = ExtResource("3_gjxwx")
-amount = 0
+[ext_resource type="Resource" uid="uid://b6t340ip2t3gu" path="res://Alchemy/Potions/Potion Slots/potion_of_protection_slot.tres" id="4_roxty"]
+[ext_resource type="Resource" uid="uid://16kh60ifg3ak" path="res://Alchemy/Potions/Potion Slots/potion_of_reflection_slot.tres" id="5_5ed5u"]
+[ext_resource type="Resource" uid="uid://dqoxh4bd3ubf0" path="res://Alchemy/Potions/Potion Slots/potion_of_burst_slot.tres" id="6_u3p17"]
+[ext_resource type="Resource" uid="uid://d0vp5mvjlef3y" path="res://Alchemy/Potions/Potion Slots/potion_of_spread_slot.tres" id="7_gnq2c"]
+[ext_resource type="Resource" uid="uid://c7tan8rqh5mdv" path="res://Alchemy/Potions/Potion Slots/potion_of_fire_slot.tres" id="8_8f6j5"]
+[ext_resource type="Resource" uid="uid://c4dujpajoodxg" path="res://Alchemy/Potions/Potion Slots/potion_of_frost_slot.tres" id="9_e2frf"]
+[ext_resource type="Resource" uid="uid://35k05c1fayp2" path="res://Alchemy/Potions/Potion Slots/potion_of_shock_slot.tres" id="10_l1rv4"]
+[ext_resource type="Resource" uid="uid://ckww8ka70o4cx" path="res://Alchemy/Potions/Potion Slots/potion_of_love_slot.tres" id="11_keww0"]
+[ext_resource type="Resource" uid="uid://5t1babf51jog" path="res://Alchemy/Potions/Potion Slots/potion_of_luck_slot.tres" id="12_l6gkc"]
+[ext_resource type="Resource" uid="uid://2alsjkkfm12n" path="res://Alchemy/Potions/Potion Slots/potion_of_shadows_slot.tres" id="13_18xke"]
 
 [resource]
 script = ExtResource("1_iglrc")
-slots = Array[ExtResource("3_gjxwx")]([ExtResource("2_as763"), ExtResource("3_5sx2g"), SubResource("Resource_avb53"), SubResource("Resource_u8lnh"), SubResource("Resource_08nyo"), SubResource("Resource_0hugf"), SubResource("Resource_wxtpy"), SubResource("Resource_10mo0"), SubResource("Resource_lqx53"), SubResource("Resource_ihbxi"), SubResource("Resource_bef44"), SubResource("Resource_esj1g")])
+slots = Array[Resource("res://Alchemy/Scripts/potion_slot.gd")]([ExtResource("2_as763"), ExtResource("3_5sx2g"), ExtResource("4_roxty"), ExtResource("5_5ed5u"), ExtResource("6_u3p17"), ExtResource("7_gnq2c"), ExtResource("8_8f6j5"), ExtResource("9_e2frf"), ExtResource("10_l1rv4"), ExtResource("11_keww0"), ExtResource("12_l6gkc"), ExtResource("13_18xke")])

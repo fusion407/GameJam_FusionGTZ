@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotSlot" load_steps=3 format=3 uid="uid://2alsjkkfm12n"]
+
+[ext_resource type="Resource" uid="uid://b0ngwkkmqk426" path="res://Alchemy/Potions/Potion Items/potion_of_shadows.tres" id="1_57jrm"]
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_slot.gd" id="2_usn8c"]
+
+[resource]
+script = ExtResource("2_usn8c")
+pot = ExtResource("1_57jrm")
+amount = 0

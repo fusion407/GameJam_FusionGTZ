@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotItem" load_steps=3 format=3 uid="uid://cuacupup6u8oi"]
+
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_item.gd" id="1_rk2n0"]
+[ext_resource type="Texture2D" uid="uid://cpoyqq181hypy" path="res://Art/inventory_art/potions/sea_potion.png" id="2_6cpyr"]
+
+[resource]
+script = ExtResource("1_rk2n0")
+name = "Potion of Spread"
+texture = ExtResource("2_6cpyr")

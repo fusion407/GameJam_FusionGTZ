@@ -11,7 +11,7 @@ var activePotion
 
 func _ready():
 
-	slots[equipped_potion_index].modulate = Color("ffffff11")
+	slots[equipped_potion_index].modulate = Color("ffffff88")
 	pot.update.connect(update_slots)
 	update_slots()
 	if !activePotion:
@@ -62,7 +62,7 @@ func toggle_potion():
 		if equipped_potion_index == 4:
 			equipped_potion_index = 0
 	activePotion = equipped_potions[equipped_potion_index]
-	slots[equipped_potion_index].modulate = Color("ffffff11")
+	slots[equipped_potion_index].modulate = Color("ffffff88")
 	
 	
 

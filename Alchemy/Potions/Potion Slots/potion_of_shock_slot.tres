@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotSlot" load_steps=3 format=3 uid="uid://35k05c1fayp2"]
+
+[ext_resource type="Resource" uid="uid://c3p4ym0r6yho4" path="res://Alchemy/Potions/Potion Items/potion_of_shock.tres" id="1_biml8"]
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_slot.gd" id="2_jmood"]
+
+[resource]
+script = ExtResource("2_jmood")
+pot = ExtResource("1_biml8")
+amount = 0

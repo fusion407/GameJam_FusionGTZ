@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotSlot" load_steps=3 format=3 uid="uid://5t1babf51jog"]
+
+[ext_resource type="Resource" uid="uid://tll75r8ga4cr" path="res://Alchemy/Potions/Potion Items/potion_of_luck.tres" id="1_y2lvf"]
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_slot.gd" id="2_3r4ii"]
+
+[resource]
+script = ExtResource("2_3r4ii")
+pot = ExtResource("1_y2lvf")
+amount = 0

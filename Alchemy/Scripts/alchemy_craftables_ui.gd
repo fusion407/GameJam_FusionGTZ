@@ -40,3 +40,43 @@ func _on_alchemy_craftables_slot_ui_1_select_potion(newPot):
 
 func _on_alchemy_craftables_slot_ui_2_select_potion(newPot):
 	crafted_potion = newPot
+
+
+func _on_alchemy_craftables_slot_ui_3_select_potion(newPot):
+	crafted_potion = newPot
+
+
+func _on_alchemy_craftables_slot_ui_4_select_potion(newPot):
+	crafted_potion = newPot
+
+
+func _on_alchemy_craftables_slot_ui_5_select_potion(newPot):
+	crafted_potion = newPot
+
+
+func _on_alchemy_craftables_slot_ui_6_select_potion(newPot):
+	crafted_potion = newPot
+
+
+func _on_alchemy_craftables_slot_ui_7_select_potion(newPot):
+	crafted_potion = newPot
+
+
+func _on_alchemy_craftables_slot_ui_8_select_potion(newPot):
+	crafted_potion = newPot
+
+
+func _on_alchemy_craftables_slot_ui_9_select_potion(newPot):
+	crafted_potion = newPot
+
+
+func _on_alchemy_craftables_slot_ui_10_select_potion(newPot):
+	crafted_potion = newPot
+
+
+func _on_alchemy_craftables_slot_ui_11_select_potion(newPot):
+	crafted_potion = newPot
+
+
+func _on_alchemy_craftables_slot_ui_12_select_potion(newPot):
+	crafted_potion = newPot

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotSlot" load_steps=3 format=3 uid="uid://d0vp5mvjlef3y"]
+
+[ext_resource type="Resource" uid="uid://cuacupup6u8oi" path="res://Alchemy/Potions/Potion Items/potion_of_spread.tres" id="1_y35lg"]
+[ext_resource type="Script" path="res://Alchemy/Scripts/potion_slot.gd" id="2_6rx5w"]
+
+[resource]
+script = ExtResource("2_6rx5w")
+pot = ExtResource("1_y35lg")
+amount = 0
