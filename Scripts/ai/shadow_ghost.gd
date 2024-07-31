@@ -1,9 +1,9 @@
-# shadow_ghost.gd
-# controls shadow ghost enemy logic
+# shadow_fiend.gd
+# controls shadow fiend enemy logic
 
 extends CharacterBody2D
 
-# shadow ghost variables
+# shadow knight variables
 var speed = 175
 var health = 100
 var ghost_damage = 0.5
@@ -17,7 +17,7 @@ var player = null
 # item drop texture variables
 @onready var bone = $bone_collectable
 @onready var orb = $shadow_orb_collectable
-@onready var goblet = $goblet_collectable
+@onready var ring = $ring_collectable
 
 var randNum
 
@@ -133,7 +133,7 @@ func death():
 	
 	# drop resource, decide drop based on random number
 	if randNum > 95:     # 5% chance to drop ring
-		dropAndCollect(goblet)
+		dropAndCollect(ring)
 	elif randNum <= 95 && randNum > 75:     # 20% chance to drop orb
 		dropAndCollect(orb)    
 	elif randNum <= 75 && randNum > 35: # 40% change to drop bone
