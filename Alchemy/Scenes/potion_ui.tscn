@@ -7,14 +7,14 @@
 [node name="potion_ui" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 27.0
-offset_bottom = 88.0
+offset_right = 86.0
+offset_bottom = 26.0
 script = ExtResource("1_5lunj")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_right = 27.0
-offset_bottom = 88.0
+offset_right = 86.0
+offset_bottom = 26.0
 texture = ExtResource("1_t64b4")
 patch_margin_left = 6
 patch_margin_top = 6
@@ -26,13 +26,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 5.0
+offset_left = 4.0
 offset_top = 5.0
-offset_right = -6.0
-offset_bottom = -7.0
+offset_right = -4.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
+columns = 4
 
 [node name="potion_ui_slot1" parent="NinePatchRect/GridContainer" instance=ExtResource("2_q34mg")]
 layout_mode = 2
@@ -57,11 +58,20 @@ size_flags_vertical = 3
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="selected_potion_box" type="Panel" parent="CanvasLayer"]
-offset_left = 157.0
-offset_top = 116.0
-offset_right = 197.0
-offset_bottom = 156.0
+offset_left = 161.0
+offset_top = 118.0
+offset_right = 201.0
+offset_bottom = 158.0
+scale = Vector2(2, 2)
 
 [node name="item_display" type="Sprite2D" parent="CanvasLayer/selected_potion_box"]
 position = Vector2(21, 20)
 scale = Vector2(2.5, 2.5)
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 102.0
+offset_top = 204.0
+offset_right = 300.0
+offset_bottom = 240.0
+horizontal_alignment = 1
+vertical_alignment = 1
