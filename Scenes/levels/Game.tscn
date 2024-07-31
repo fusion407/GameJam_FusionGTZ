@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dyymqhc74fum5" path="res://Scenes/ai/shadow_knight.tscn" id="14_ov0ph"]
 [ext_resource type="PackedScene" uid="uid://cr1pr53eaehmf" path="res://Scenes/ai/shadow_fiend.tscn" id="15_cbjh5"]
 [ext_resource type="PackedScene" uid="uid://cn23neebowq4r" path="res://Scenes/ai/shadow_ghost.tscn" id="16_v5apg"]
-[ext_resource type="PackedScene" path="res://Scenes/ui/clock.tscn" id="19_yqpdl"]
+[ext_resource type="PackedScene" uid="uid://b8pqb60cahw6h" path="res://Scenes/ui/clock.tscn" id="19_yqpdl"]
 [ext_resource type="PackedScene" uid="uid://bpj1hysvc4jqh" path="res://Scenes/levels/lighting.tscn" id="20_183vh"]
 [ext_resource type="Script" path="res://Scripts/levels/lighting.gd" id="21_fxemk"]
 
