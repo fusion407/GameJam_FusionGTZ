@@ -14,6 +14,7 @@ script = ExtResource("1_4dcuw")
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(28.88, 16.56)
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Potion" type="Sprite2D" parent="."]
@@ -80,6 +81,7 @@ text = "Spells & Potions Inc."
 
 [node name="Fade_transition" parent="." instance=ExtResource("3_jvrjd")]
 visible = false
+mouse_filter = 2
 
 [node name="fade_timer" type="Timer" parent="Fade_transition"]
 

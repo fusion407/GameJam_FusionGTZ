@@ -40,7 +40,7 @@ func _set_health(value):
 func _physics_process(delta):
 	if !dead:
 		$detection_area/CollisionShape2D.disabled = false
-		
+
 		if player_in_area:
 			var direction = (player.position - position).normalized()
 			position += direction * speed * delta
@@ -52,7 +52,7 @@ func _physics_process(delta):
 	if dead:
 		$detection_area/CollisionShape2D.disabled = true
 		$CollisionShape2D.disabled = true
-		
+
 # ------------ damage functions ------------
 func take_damage(damage):
 	var new_health = health - damage
@@ -89,7 +89,8 @@ func _on_hitbox_area_entered(area):
 			speed = 0
 			$Shock_timer.start(10)
 		print(damage)
-		take_damage(damage)
+		if !dead:
+			take_damage(damage)
 		area.visible = false
 	
 # when player is within enemy detection area
@@ -104,7 +105,6 @@ func _on_detection_area_body_entered(body):
 func _on_detection_area_body_exited(body):
 	if body.has_method("player"):
 		player_in_area = false
-		player = null
 
 # enemy collides with player
 func _on_hitbox_body_entered(body):

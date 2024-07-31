@@ -4,6 +4,7 @@ extends Panel
 @onready var potInv : Pot = preload("res://Alchemy/Potions/potion_inventory.tres")
 @onready var item_visual: Sprite2D = $CenterContainer/Panel/item_display
 @onready var selected_potion = null
+@onready var selected_potion_materials = []
 var player = null
 
 var mouse_is_hovered = false
@@ -57,21 +58,20 @@ func _on_mouse_detection_zone_input_event(viewport, event, shape_idx):
 	# whenever potion is clicked and selected
 	if event is InputEventMouseButton:
 		var potionIndex = self.get_index()
-		print("mouse button input work")
-		
+		var materialsArray = []
+
 		# if slot is empty, return nothing
 		if pot.slots[potionIndex].pot == null:
 			return
-			
+		
+		
+		
 		# create a variable for selected potion, change the nodes to selected potion
-		selected_potion = pot.slots[potionIndex].pot
-		self.get_parent().get_parent().get_parent().find_child("potion_img").texture = selected_potion.texture
-		self.get_parent().get_parent().get_parent().find_child("potion_title").text = selected_potion.name
-		if !selected_potion:
-			return
+		selected_potion = pot.slots[potionIndex]
+		
+		self.get_parent().get_parent().get_parent().find_child("potion_img").texture = selected_potion.pot.texture
+		self.get_parent().get_parent().get_parent().find_child("potion_title").text = selected_potion.pot.name
+		
+		
 		selectPotion.emit(selected_potion)
 		
-		#DEBUG
-		print(selected_potion.name)
-		print(selected_potion.texture)
-

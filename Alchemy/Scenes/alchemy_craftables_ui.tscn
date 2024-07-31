@@ -107,7 +107,7 @@ offset_bottom = 29.0
 scale = Vector2(1.3, 1.3)
 expand_mode = 1
 
-[node name="required_materials" type="NinePatchRect" parent="."]
+[node name="required_materials_box" type="NinePatchRect" parent="."]
 layout_mode = 0
 offset_left = 67.0
 offset_top = 53.0
@@ -119,7 +119,7 @@ patch_margin_top = 7
 patch_margin_right = 7
 patch_margin_bottom = 7
 
-[node name="required_materials_text" type="RichTextLabel" parent="required_materials"]
+[node name="required_materials_text" type="RichTextLabel" parent="required_materials_box"]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 2.0

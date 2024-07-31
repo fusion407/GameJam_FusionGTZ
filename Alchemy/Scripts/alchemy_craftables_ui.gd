@@ -7,7 +7,9 @@ extends Control
 
 
 @export var crafted_potion : PotItem = null
+@export var required_materials : Array[InvItem]
 
+signal selectPot(somePot, somePotMaterials)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,48 +37,49 @@ func _on_craft_button_gui_input(event):
 
 
 func _on_alchemy_craftables_slot_ui_1_select_potion(newPot):
-	crafted_potion = newPot
+	crafted_potion = newPot.pot
+
 
 
 func _on_alchemy_craftables_slot_ui_2_select_potion(newPot):
-	crafted_potion = newPot
+	crafted_potion = newPot.pot
 
 
 func _on_alchemy_craftables_slot_ui_3_select_potion(newPot):
-	crafted_potion = newPot
+	crafted_potion = newPot.pot
 
 
 func _on_alchemy_craftables_slot_ui_4_select_potion(newPot):
-	crafted_potion = newPot
+	crafted_potion = newPot.pot
 
 
 func _on_alchemy_craftables_slot_ui_5_select_potion(newPot):
-	crafted_potion = newPot
+	crafted_potion = newPot.pot
 
 
 func _on_alchemy_craftables_slot_ui_6_select_potion(newPot):
-	crafted_potion = newPot
+	crafted_potion = newPot.pot
 
 
 func _on_alchemy_craftables_slot_ui_7_select_potion(newPot):
-	crafted_potion = newPot
+	crafted_potion = newPot.pot
 
 
 func _on_alchemy_craftables_slot_ui_8_select_potion(newPot):
-	crafted_potion = newPot
+	crafted_potion = newPot.pot
 
 
 func _on_alchemy_craftables_slot_ui_9_select_potion(newPot):
-	crafted_potion = newPot
+	crafted_potion = newPot.pot
 
 
 func _on_alchemy_craftables_slot_ui_10_select_potion(newPot):
-	crafted_potion = newPot
+	crafted_potion = newPot.pot
 
 
 func _on_alchemy_craftables_slot_ui_11_select_potion(newPot):
-	crafted_potion = newPot
+	crafted_potion = newPot.pot
 
 
 func _on_alchemy_craftables_slot_ui_12_select_potion(newPot):
-	crafted_potion = newPot
+	crafted_potion = newPot.pot
