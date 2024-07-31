@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d057yjg0y6shv" path="res://Alchemy/Scenes/alchemy_craftables_ui.tscn" id="3_aecfg"]
 
 [node name="alchemy_ui" type="Control"]
+top_level = true
 custom_minimum_size = Vector2(84, 64)
 layout_mode = 3
 anchors_preset = 0

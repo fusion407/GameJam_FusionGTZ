@@ -29,6 +29,7 @@ func _set_health(value):
 
 func _physics_process(delta):
 	if !dead:
+
 		$detection_area/CollisionShape2D.disabled = false
 		if player_in_area:
 			position += (player.position - position) / speed
@@ -39,9 +40,11 @@ func _physics_process(delta):
 		if colliding_with_player and player.isAlive and !dead:
 			deal_damage(slime_damage)	
 		
+		
 	if dead:
 		$detection_area/CollisionShape2D.disabled = true
 		$CollisionShape2D.disabled = true
+
 
 # ---------- collision functions ----------
 func _on_detection_area_body_entered(body):
@@ -55,7 +58,6 @@ func _on_detection_area_body_entered(body):
 func _on_detection_area_body_exited(body):
 	if body.has_method("player"):
 		player_in_area = false
-		player = null
 
 func _on_find_player_area_body_entered(body):
 	if body.has_method("player"):
@@ -65,8 +67,8 @@ func _on_hitbox_area_entered(area):
 	var damage
 	if area.has_method("projectile_deal_damage"):
 		if player and player.firePotionOn:
-			damage = player.base_damage + 2000
-		else:
+			damage = player.base_damage + 100
+		elif player:
 			damage = player.base_damage
 		if player and player.frostPotionOn:
 			speed = 10
@@ -75,7 +77,9 @@ func _on_hitbox_area_entered(area):
 			speed = 0
 			$Shock_timer.start(10)
 		print(damage)
-		take_damage(damage)
+		if !dead:
+			take_damage(damage)
+			
 		area.visible = false
 			
 		
@@ -98,6 +102,7 @@ func take_damage(damage):
 		death()
 	else:
 		_set_health(new_health)
+
 		
 func deal_damage(damage):
 	if player.reflectionPotionOn:
