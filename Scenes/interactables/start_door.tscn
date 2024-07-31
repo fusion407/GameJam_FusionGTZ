@@ -29,7 +29,6 @@ scale = Vector2(1, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_collision"]
 position = Vector2(7.94727e-07, -5.35713)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ny1km")
 
 [node name="Fade_transition" parent="." instance=ExtResource("3_8usa1")]
