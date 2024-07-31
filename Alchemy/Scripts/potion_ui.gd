@@ -4,7 +4,6 @@ extends Control
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
 
 signal drinkPotion(potion, index)
-var is_open = false
 @onready var equipped_potion_index = 0
 @onready var equipped_potions: Array = []
 var activePotion
@@ -16,7 +15,6 @@ func _ready():
 	update_slots()
 	if !activePotion:
 		activePotion = equipped_potions[equipped_potion_index]
-	close()
 	
 func update_slots():
 	for i in range(min(pot.slots.size(), slots.size())):
@@ -32,11 +30,7 @@ func remove_potion(potion, index):
 	update_slots()
 
 func _process(delta):
-	if Input.is_action_just_pressed("i"):
-		if is_open:
-			close()
-		else:
-			open()
+
 	if Input.is_action_just_pressed("q") and pot:
 		toggle_potion()
 	if Input.is_action_just_pressed("right_click"):
@@ -44,8 +38,10 @@ func _process(delta):
 	
 	if(activePotion.pot):
 		$CanvasLayer/selected_potion_box/item_display.texture = activePotion.pot.texture
+		$CanvasLayer/Label.text = activePotion.pot.name
 	else:
 		$CanvasLayer/selected_potion_box/item_display.texture = null
+		$CanvasLayer/Label.text = ""
 	
 func useItem():
 
@@ -56,6 +52,7 @@ func useItem():
 
 func toggle_potion():
 	
+	# moms spaghetti
 	slots[equipped_potion_index].modulate = Color("ffffff")
 	if equipped_potion_index <= 3 and equipped_potion_index >= 0:
 		equipped_potion_index = equipped_potion_index + 1
@@ -70,11 +67,4 @@ func toggle_potion():
 
 
 
-func open():
-	visible = true
-	is_open = true
-	
-func close():
-	visible = false
-	is_open = false
 

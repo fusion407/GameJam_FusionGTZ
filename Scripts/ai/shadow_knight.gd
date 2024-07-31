@@ -21,9 +21,20 @@ var player = null
 
 var randNum
 
+@onready var healthbar = $Healthbar
 func _ready():
+	health = 250
 	dead = false
-
+	healthbar.visible = false
+	healthbar.init_health(health)
+	
+func _set_health(value):
+		health = value
+		if health <= 0 and !dead:
+			death()
+		
+		healthbar.health = health
+	
 func _physics_process(delta):
 	if !dead:
 		$detection_area/CollisionShape2D.disabled = false
@@ -44,16 +55,22 @@ func _physics_process(delta):
 		
 # ------------ damage functions ------------
 func take_damage(damage):
-	health = health - damage
+	var new_health = health - damage
+	healthbar.visible = true
 	if health <= 0 and !dead:
 		death()
+	else:
+		_set_health(new_health)
 		
 func deal_damage(damage):
-	var new_health = player.health - damage
-	if player.health <= 0:
-		player.death()
+	if player.reflectionPotionOn:
+		take_damage(damage)
 	else:
-		player._set_health(new_health)	
+		var new_health = player.health - damage
+		if player.health <= 0:
+			player.death()
+		else:
+			player._set_health(new_health)	
 		
 
 # ------------ collision functions ------------
@@ -61,15 +78,27 @@ func deal_damage(damage):
 func _on_hitbox_area_entered(area):
 	var damage
 	if area.has_method("projectile_deal_damage"):
-		damage = 50
+		if player.firePotionOn:
+			damage = player.base_damage + 2000
+		else:
+			damage = player.base_damage
+		if player and player.frostPotionOn:
+			speed = 10
+			$Slow_timer.start(10)
+		if player and player.shockPotionOn:
+			speed = 0
+			$Shock_timer.start(10)
+		print(damage)
 		take_damage(damage)
 		area.visible = false
 	
 # when player is within enemy detection area
 func _on_detection_area_body_entered(body):
 	if body.has_method("player"):
-		player_in_area = true
 		player = body
+		if player.shadowsPotionOn:
+			return
+		player_in_area = true
 
 # when player leaves enemy detection area
 func _on_detection_area_body_exited(body):
@@ -120,3 +149,16 @@ func dropAndCollect(item):
 	item.visible = true
 	await get_tree().create_timer(10).timeout
 	queue_free()
+
+
+func _on_find_player_area_body_entered(body):
+	if body.has_method("player"):
+		player = body
+
+
+func _on_slow_timer_timeout():
+	speed = 40
+
+
+func _on_shock_timer_timeout():
+	speed = 40

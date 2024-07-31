@@ -3,7 +3,7 @@ class_name Player
 
 var speed = 100
 var health = 100
-var base_damage = 10
+var base_damage = 50
 var player_state
 
 @export var inv: Inv
@@ -13,6 +13,22 @@ var player_state
 # once the game has ended, make sure game_has_started, and wand_equipped is set to false
 # by default, game_has_started will eventually be set to false so player has to initiate game start function to use wand
 var isAlive = true
+
+# potion effects
+var protectionPotionOn = false
+var isHealingPotion = false
+var reflectionPotionOn = false
+var burstPotionOn = false
+var spreadPotionOn = false
+var speedPotionOn = false
+var firePotionOn = false
+var frostPotionOn = false
+var shockPotionOn = false
+var lovePotionOn = false
+var luckPotionOn = false
+var shadowsPotionOn = false
+
+
 var game_has_started = false
 var wand_equipped = false
 var wand_cooldown = true
@@ -27,12 +43,16 @@ func _ready():
 	healthbar.init_health(health)
 	
 func _set_health(value):
-	health = value
-	if health <= 0 and isAlive:
-		death()
-	
-	healthbar.health = health
-	print(health)
+	if protectionPotionOn and !isHealingPotion:
+		return
+	if reflectionPotionOn and !isHealingPotion:
+		return
+	else:
+		health = value
+		if health <= 0 and isAlive:
+			death()
+		
+		healthbar.health = health
 
 func _physics_process(delta):
 	mouse_loc_from_player = get_global_mouse_position() - self.position
@@ -65,16 +85,44 @@ func _physics_process(delta):
 	# event handler for left mouse click when game has started, fires projectiles 
 	if Input.is_action_just_pressed("left_mouse") and wand_equipped and game_has_started and wand_cooldown:
 		wand_cooldown = false
+		
 		var projectile_instance = projectile.instantiate()
 		projectile_instance.rotation = $Marker2D.rotation
 		projectile_instance.global_position = $Marker2D.global_position
 		add_child(projectile_instance)
 		$projectileAudio.play()
+
+		if burstPotionOn:
+			await get_tree().create_timer(0.05).timeout
+			var projectile_instance2 = projectile.instantiate()
+			var projectile_instance3 = projectile.instantiate()
+
+			projectile_instance2.rotation = $Marker2D.rotation
+			projectile_instance3.rotation = $Marker2D.rotation
+			
+			projectile_instance2.global_position = $Marker2D.global_position
+			projectile_instance3.global_position = $Marker2D.global_position
+			
+			add_child(projectile_instance2)
+			await get_tree().create_timer(0.05).timeout
+			add_child(projectile_instance3)
+		if spreadPotionOn:
+			var projectile_instance3 = projectile.instantiate()
+			var projectile_instance4 = projectile.instantiate()
+			projectile_instance3.rotation = $Marker2D.rotation * 0.25
+			projectile_instance4.rotation = $Marker2D.rotation * 0.5
+			
+			projectile_instance3.global_position = $Marker2D.global_position
+			projectile_instance4.global_position = $Marker2D.global_position
+			add_child(projectile_instance3)
+			add_child(projectile_instance4)
+		
+		await get_tree().create_timer(0.3).timeout
+
 		
 		# plays attack animation when left mouse click is used not working very well, attack animation can be low priority
 		# play_attack_anim(mouse_loc_from_player)
 		
-		await get_tree().create_timer(0.1).timeout
 		wand_cooldown = true
 	
 	play_anim(direction)
@@ -176,49 +224,65 @@ func drink_potion(name, index):
 
 	
 
-func craftPotion(potion):
-	pot.insert(potion)
-	
+# potion effect functions
+
 func potion_of_healing_effect():
+	isHealingPotion = true
 	var new_health = health + 10
 	if health >= 100:
 		_set_health(100)
 	else:
 		_set_health(new_health)	
+	isHealingPotion = false
 
 func potion_of_speed_effect():
+	speedPotionOn = true
 	speed = 400
 	$Speed_timer.start(10)
 
 func potion_of_protection_effect():
-	print("works fine")
+	protectionPotionOn = true
+	$Protection_timer.start(10)
 	
 func potion_of_reflection_effect():
-	print("works fine")
+	reflectionPotionOn = true
+	$Reflection_timer.start(10)
 
 func potion_of_burst_effect():
-	print("works fine")
+	burstPotionOn = true
+	$Burst_timer.start(10)
 	
 func potion_of_spread_effect():
-	print("works fine")
+	spreadPotionOn = true
+	$Spread_timer.start(10)
 
 func potion_of_fire_effect():
-	print("works fine")
+	firePotionOn = true
+	base_damage = 50
+	$Fire_timer.start(10)
 
 func potion_of_frost_effect():
-	print("works fine")
+	frostPotionOn = true
+	$Frost_timer.start(10)
 	
 func potion_of_shock_effect():
-	print("works fine")
+	shockPotionOn = true
+	$Shock_timer.start(10)
 	
 func potion_of_love_effect():
-	print("works fine")
+	lovePotionOn = true
+	$Love_timer.start(10)
 	
 func potion_of_luck_effect():
-	print("works fine")
+	luckPotionOn = true
+	$Luck_timer.start(10)
 	
 func potion_of_shadows_effect():
-	print("works fine")
+	shadowsPotionOn = true
+	$Shadows_timer.start(10)
+
+
+# the all so scary death function
 
 func death():
 	isAlive = false
@@ -237,14 +301,42 @@ func death():
 	# hello - corbin
 
 
-func _on_potion_ui_current_pot_index(index):
-	currentIndex = index
-	print(currentIndex)
-
+# potion effect timeout signals
 
 func _on_potion_ui_drink_potion(potion, index):
 	drink_potion(potion.name, index)
 	
-
 func _on_speed_timer_timeout():
 	speed = 100
+	speedPotionOn = false
+
+func _on_protection_timer_timeout():
+	protectionPotionOn = false
+
+func _on_reflection_timer_timeout():
+	reflectionPotionOn = false
+
+func _on_burst_timer_timeout():
+	burstPotionOn = false
+
+func _on_spread_timer_timeout():
+	spreadPotionOn = false
+
+func _on_fire_timer_timeout():
+	firePotionOn = false
+	
+
+func _on_frost_timer_timeout():
+	frostPotionOn = false
+
+func _on_shock_timer_timeout():
+	shockPotionOn = false
+
+func _on_love_timer_timeout():
+	lovePotionOn = false
+
+func _on_luck_timer_timeout():
+	luckPotionOn = false
+
+func _on_shadows_timer_timeout():
+	shadowsPotionOn = false
