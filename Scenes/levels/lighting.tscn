@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqwljfeoifavc"]
+
+[ext_resource type="Texture2D" uid="uid://cyohnrbupips7" path="res://Art/environment/lighting/lighting_1.png" id="1_s8a88"]
+[ext_resource type="Texture2D" uid="uid://ds5ekrky2eo0t" path="res://Art/environment/lighting/lighting_2.png" id="2_ysdhr"]
+[ext_resource type="Texture2D" uid="uid://dt28x647qhr25" path="res://Art/environment/lighting/lighting_4.png" id="3_bb7hi"]
+[ext_resource type="Texture2D" uid="uid://dgqgaeko18210" path="res://Art/environment/lighting/lighting_3.png" id="3_bbg8l"]
+
+[node name="Lighting" type="Node2D"]
+
+[node name="lighting_10pm" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(581.5, 327.5)
+scale = Vector2(12.4297, 8.46094)
+texture = ExtResource("1_s8a88")
+
+[node name="lighting_11pm" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(582.5, 327)
+scale = Vector2(12.3516, 8.40625)
+texture = ExtResource("2_ysdhr")
+
+[node name="lighting_12am" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(585, 325.5)
+scale = Vector2(12.3281, 8.44531)
+texture = ExtResource("3_bbg8l")
+
+[node name="lighting_1am" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(583.5, 323)
+scale = Vector2(12.3828, 8.4375)
+texture = ExtResource("3_bb7hi")

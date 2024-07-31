@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://jai5un104npm"]
+[gd_scene load_steps=28 format=3 uid="uid://jai5un104npm"]
 
 [ext_resource type="Script" path="res://Scripts/levels/Game.gd" id="1_3rbk6"]
 [ext_resource type="Texture2D" uid="uid://cvpi02o6fp5e4" path="res://Art/environment/survivalgame-terrian-defult.png" id="2_hoqn3"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://cr1pr53eaehmf" path="res://Scenes/ai/shadow_fiend.tscn" id="15_cbjh5"]
 [ext_resource type="PackedScene" uid="uid://cn23neebowq4r" path="res://Scenes/ai/shadow_ghost.tscn" id="16_v5apg"]
 [ext_resource type="PackedScene" uid="uid://b8pqb60cahw6h" path="res://Scenes/ui/clock.tscn" id="19_yqpdl"]
+[ext_resource type="PackedScene" uid="uid://bqwljfeoifavc" path="res://Scenes/levels/lighting.tscn" id="20_183vh"]
+[ext_resource type="Script" path="res://Scripts/levels/lighting.gd" id="21_fxemk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4fwde"]
 resource_name = "true"
@@ -796,5 +798,13 @@ position = Vector2(-193, 135)
 
 [node name="Clock" parent="." instance=ExtResource("19_yqpdl")]
 
+[node name="Lighting" parent="." instance=ExtResource("20_183vh")]
+position = Vector2(-549, -303)
+script = ExtResource("21_fxemk")
+
 [connection signal="hasTime" from="game_timer" to="Clock" method="_on_game_timer_has_time"]
 [connection signal="timeout" from="game_timer" to="." method="_on_game_timer_timeout"]
+[connection signal="light1" from="Clock" to="Lighting" method="_on_clock_light_1"]
+[connection signal="light2" from="Clock" to="Lighting" method="_on_clock_light_2"]
+[connection signal="light3" from="Clock" to="Lighting" method="_on_clock_light_3"]
+[connection signal="light4" from="Clock" to="Lighting" method="_on_clock_light_4"]
