@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://jai5un104npm"]
+[gd_scene load_steps=28 format=3 uid="uid://jai5un104npm"]
 
 [ext_resource type="Script" path="res://Scripts/levels/Game.gd" id="1_3rbk6"]
 [ext_resource type="Texture2D" uid="uid://cvpi02o6fp5e4" path="res://Art/environment/survivalgame-terrian-defult.png" id="2_hoqn3"]
@@ -12,11 +12,15 @@
 [ext_resource type="PackedScene" uid="uid://h63hienpe3xb" path="res://Scenes/ai/npc.tscn" id="9_e1pcm"]
 [ext_resource type="PackedScene" uid="uid://c5kanos1vyxx1" path="res://Scenes/ui/fade_transition.tscn" id="10_4y1va"]
 [ext_resource type="PackedScene" uid="uid://dlaulvfxk1dir" path="res://Scenes/collectables/lighter_collectable.tscn" id="11_auh1k"]
+[ext_resource type="Script" path="res://Scripts/ui/game_timer.gd" id="11_ppa7g"]
 [ext_resource type="PackedScene" uid="uid://mk8mgi4k3y8e" path="res://Scenes/character/player.tscn" id="12_ixhgd"]
 [ext_resource type="PackedScene" uid="uid://b1351188ahop4" path="res://Scenes/collectables/stone_collectable.tscn" id="12_m44q2"]
 [ext_resource type="PackedScene" uid="uid://dyymqhc74fum5" path="res://Scenes/ai/shadow_knight.tscn" id="14_ov0ph"]
 [ext_resource type="PackedScene" uid="uid://cr1pr53eaehmf" path="res://Scenes/ai/shadow_fiend.tscn" id="15_cbjh5"]
 [ext_resource type="PackedScene" uid="uid://cn23neebowq4r" path="res://Scenes/ai/shadow_ghost.tscn" id="16_v5apg"]
+[ext_resource type="PackedScene" uid="uid://b8pqb60cahw6h" path="res://Scenes/ui/clock.tscn" id="19_yqpdl"]
+[ext_resource type="PackedScene" uid="uid://bqwljfeoifavc" path="res://Scenes/levels/lighting.tscn" id="20_183vh"]
+[ext_resource type="Script" path="res://Scripts/levels/lighting.gd" id="21_fxemk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4fwde"]
 resource_name = "true"
@@ -746,6 +750,7 @@ wait_time = 3.0
 wait_time = 60.0
 one_shot = true
 autostart = true
+script = ExtResource("11_ppa7g")
 
 [node name="lighter_collectable" parent="." instance=ExtResource("11_auh1k")]
 position = Vector2(246, 78)
@@ -791,4 +796,15 @@ position = Vector2(-67, 78)
 [node name="ShadowGhost3" parent="." instance=ExtResource("16_v5apg")]
 position = Vector2(-193, 135)
 
+[node name="Clock" parent="." instance=ExtResource("19_yqpdl")]
+
+[node name="Lighting" parent="." instance=ExtResource("20_183vh")]
+position = Vector2(-549, -303)
+script = ExtResource("21_fxemk")
+
+[connection signal="hasTime" from="game_timer" to="Clock" method="_on_game_timer_has_time"]
 [connection signal="timeout" from="game_timer" to="." method="_on_game_timer_timeout"]
+[connection signal="light1" from="Clock" to="Lighting" method="_on_clock_light_1"]
+[connection signal="light2" from="Clock" to="Lighting" method="_on_clock_light_2"]
+[connection signal="light3" from="Clock" to="Lighting" method="_on_clock_light_3"]
+[connection signal="light4" from="Clock" to="Lighting" method="_on_clock_light_4"]
