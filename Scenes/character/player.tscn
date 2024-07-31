@@ -431,15 +431,15 @@ zoom = Vector2(2.5, 2.5)
 [node name="Inventory_UI" parent="." instance=ExtResource("4_idabu")]
 z_index = 3
 offset_left = -43.0
-offset_top = -94.0
+offset_top = -92.0
 offset_right = 43.0
-offset_bottom = -30.0
+offset_bottom = -28.0
 
 [node name="potion_ui" parent="." instance=ExtResource("7_2fk8u")]
-offset_left = 53.0
-offset_top = -106.0
-offset_right = 80.0
-offset_bottom = -18.0
+offset_left = -44.0
+offset_top = -122.0
+offset_right = 42.0
+offset_bottom = -96.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
@@ -463,5 +463,43 @@ offset_bottom = -93.0
 [node name="Speed_timer" type="Timer" parent="."]
 wait_time = 10.0
 
+[node name="Protection_timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Reflection_timer" type="Timer" parent="."]
+
+[node name="Burst_timer" type="Timer" parent="."]
+
+[node name="Spread_timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Fire_timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Frost_timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Shock_timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Love_timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Luck_timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Shadows_timer" type="Timer" parent="."]
+wait_time = 10.0
+
 [connection signal="drinkPotion" from="potion_ui" to="." method="_on_potion_ui_drink_potion"]
 [connection signal="timeout" from="Speed_timer" to="." method="_on_speed_timer_timeout"]
+[connection signal="timeout" from="Protection_timer" to="." method="_on_protection_timer_timeout"]
+[connection signal="timeout" from="Reflection_timer" to="." method="_on_reflection_timer_timeout"]
+[connection signal="timeout" from="Burst_timer" to="." method="_on_burst_timer_timeout"]
+[connection signal="timeout" from="Spread_timer" to="." method="_on_spread_timer_timeout"]
+[connection signal="timeout" from="Fire_timer" to="." method="_on_fire_timer_timeout"]
+[connection signal="timeout" from="Frost_timer" to="." method="_on_frost_timer_timeout"]
+[connection signal="timeout" from="Shock_timer" to="." method="_on_shock_timer_timeout"]
+[connection signal="timeout" from="Love_timer" to="." method="_on_love_timer_timeout"]
+[connection signal="timeout" from="Luck_timer" to="." method="_on_luck_timer_timeout"]
+[connection signal="timeout" from="Shadows_timer" to="." method="_on_shadows_timer_timeout"]
