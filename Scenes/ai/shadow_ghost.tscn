@@ -39,7 +39,6 @@ shape = SubResource("CircleShape2D_u70da")
 [node name="hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-visible = false
 shape = SubResource("CircleShape2D_jpndk")
 
 [node name="detection_area" type="Area2D" parent="."]
@@ -49,12 +48,18 @@ shape = SubResource("CircleShape2D_ic726")
 
 [node name="bone_collectable" parent="." instance=ExtResource("3_pkqrn")]
 visible = false
+collision_layer = 0
+collision_mask = 0
 
 [node name="shadow_orb_collectable" parent="." instance=ExtResource("4_x66x8")]
 visible = false
+collision_layer = 0
+collision_mask = 0
 
 [node name="ring_collectable" parent="." instance=ExtResource("5_76uhi")]
 visible = false
+collision_layer = 0
+collision_mask = 0
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

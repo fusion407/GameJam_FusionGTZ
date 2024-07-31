@@ -93,6 +93,7 @@ func death():
 	dead = true
 	# todo - add death animation
 	# $AnimatedSprite2D.play("death")
+	await get_tree().create_timer(0.1).timeout
 
 	
 	

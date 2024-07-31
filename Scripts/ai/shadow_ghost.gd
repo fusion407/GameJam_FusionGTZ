@@ -63,7 +63,10 @@ func _on_hitbox_area_entered(area):
 	if area.has_method("projectile_deal_damage"):
 		damage = 50
 		take_damage(damage)
-		area.visible = false
+		if dead:
+			area.visible = true
+		else: 
+			area.visible = false
 	
 # when player is within enemy detection area
 func _on_detection_area_body_entered(body):
@@ -93,6 +96,7 @@ func death():
 	dead = true
 	# todo - add death animation
 	# $AnimatedSprite2D.play("death")
+	await get_tree().create_timer(0.1).timeout
 	
 	
 	# get random number
@@ -108,7 +112,7 @@ func death():
 		dropAndCollect(bone)
 	# else - 35% no drops for wizard, get rekt
 	
-	# get rid of sprite and disable all hitboxes except collect_area
+	# get rid of sprite and disable all hitboxes 
 	$AnimatedSprite2D.visible = false
 	$hitbox/CollisionShape2D.disabled = true
 	$detection_area/CollisionShape2D.disabled = true
