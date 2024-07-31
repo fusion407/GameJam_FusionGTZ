@@ -90,6 +90,7 @@ func _physics_process(delta):
 		projectile_instance.rotation = $Marker2D.rotation
 		projectile_instance.global_position = $Marker2D.global_position
 		add_child(projectile_instance)
+		$projectile_audio.play()
 		if burstPotionOn:
 			await get_tree().create_timer(0.05).timeout
 			var projectile_instance2 = projectile.instantiate()
